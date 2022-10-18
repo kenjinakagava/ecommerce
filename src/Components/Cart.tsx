@@ -1,7 +1,13 @@
 import IconBtn from "../Styles/IconBtn";
+import { useState } from "react";
+
 const Cart = () => {
+  const handleClick = () => {
+    console.log("kuuninaru");
+  };
+
   return (
-    <IconBtn>
+    <IconBtn onClick={handleClick}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

@@ -1,4 +1,5 @@
 import Header from "./Components/Header";
+import Main from "./Components/Main";
 import Global from "./Styles/GlobalStyles";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -8,7 +9,9 @@ function App() {
       <Router>
         <Global />
         <Header></Header>
-        <Routes></Routes>
+        <Routes>
+          <Route path="/" element={<Main />}></Route>
+        </Routes>
       </Router>
     </div>
   );
