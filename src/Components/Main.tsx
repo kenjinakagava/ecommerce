@@ -1,10 +1,8 @@
 import styled from "styled-components";
-import thumbsup from "../thumbsupguy.jpg";
+import Product from "./Product";
 
 const MainContent = styled.main`
-  height: calc(100vh - 44px);
-  width: 100%;
-  white-space: pre-line;
+  height: calc(100vh - 100px);
 `;
 
 const HeroTextContent = styled.div``;
@@ -12,7 +10,7 @@ const HeroTextContent = styled.div``;
 const Main = () => {
   return (
     <MainContent>
-      <h1>Placeholder for some cool quote</h1>
+      <Product />
     </MainContent>
   );
 };

@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 
 const HeaderContainer = styled.header`
   color: #0a2540;
-  margin: 20px 0;
+  padding-top: 10px;
   h1 {
+    font-size: 24px;
     margin-left: 1rem;
   }
   svg {

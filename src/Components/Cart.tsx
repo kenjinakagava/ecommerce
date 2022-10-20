@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Cart = () => {
   const handleClick = () => {
-    console.log("kuuninaru");
+    console.log("click");
   };
 
   return (
