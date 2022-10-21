@@ -15,9 +15,11 @@ const ProductImage = styled.img`
 
 const ProductDisplay = styled.div`
   position: relative;
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 250px;
   outline: 1px solid rgba(0, 0, 0, 0.1);
+  @media (min-width: 768px) {
+    max-width: 300px;
+  }
 `;
 
 const ProductDisplayDescription = styled.div``;
