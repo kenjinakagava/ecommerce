@@ -7,8 +7,8 @@ const Global = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-  background-color: #f7fafc;
-
+    background-color: #f7fafc;
+    font-family: "EB Garamond", serif;
     }
     ul {
         list-style: none;
@@ -16,6 +16,9 @@ const Global = createGlobalStyle`
     a {
         text-decoration: none;
         color: inherit;
+    }
+    a:focus-visible, button:focus-visible {
+        outline: 2px solid #5e361e;
     }
 `;
 

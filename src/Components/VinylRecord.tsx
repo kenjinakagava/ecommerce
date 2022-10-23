@@ -62,8 +62,8 @@ const OuterCircumference = styled.div`
 
 const InnerCircumference = styled(VinylCircumference)`
   background-color: #15151a;
-  width: 142px;
-  height: 142px;
+  width: 200px;
+  height: 200px;
   outline: 1px solid rgba(0, 0, 0, 0.2);
   z-index: 2;
 `;

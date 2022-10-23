@@ -1,4 +1,4 @@
-import IconBtn from "../Styles/IconBtn";
+import IconBtn from "./Buttons/Icon/IconBtn";
 import { useState } from "react";
 
 const Cart = () => {
