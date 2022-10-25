@@ -1,5 +1,7 @@
 import styled from "styled-components/macro";
 
+interface VinylProps {}
+
 const VinylCircumference = styled.div`
   display: none;
   @media (min-width: 768px) {
@@ -68,11 +70,12 @@ const InnerCircumference = styled(VinylCircumference)`
   z-index: 2;
 `;
 
-const RecordLabel = styled(VinylCircumference)`
+const RecordLabel = styled(VinylCircumference)<VinylProps>`
   background: url(https://medium-media.vgm.io/albums/28/57682/57682-1463783329.jpg);
   z-index: 3;
   width: 160px;
   height: 160px;
+  background-size: contain;
 `;
 
 const SpindleHole = styled(VinylCircumference)`

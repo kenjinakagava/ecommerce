@@ -3,9 +3,15 @@ import Main from "./Components/Main";
 import Footer from "./Components/Footer";
 import Global from "./Styles/GlobalStyles";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProductSwiper from "./Components/ProductSwiper";
+import ProductsList from "./Components/ProductsList";
+import { useState, useEffect } from "react";
+import { CallApi } from "./Features/GetProductInfo";
 
 function App() {
+  const [test, setTest] = useState(null);
+  useEffect(() => {
+    CallApi();
+  }, []);
   return (
     <div className="App">
       <Router>
@@ -13,7 +19,8 @@ function App() {
         <Header></Header>
         <Main>
           <Routes>
-            <Route path="/" element={<ProductSwiper />}></Route>
+            <Route path="/" element={<ProductsList />}></Route>
+            <Route path="*" element={<div>404</div>}></Route>
           </Routes>
         </Main>
         <Footer />

@@ -1,7 +1,7 @@
 import Product from "./Product";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Keyboard, A11y } from "swiper";
+import { Navigation, Keyboard, A11y } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -9,6 +9,18 @@ import "swiper/css/a11y";
 
 {
   // maybe separate some of these styled components so this one doesn't get overloaded, the functionality on this one should be to render the product
+}
+
+const StyledSwiper = styled(Swiper)`
+  --swiper-theme-color: #222;
+`;
+
+{
+  /*
+https://webaim.org/resources/contrastchecker/
+passes Graphical Objects and User Interface Components test 
+in both backgrounsd (#000 and #F7FAFC)
+*/
 }
 
 const StyledSwiperSlide = styled(SwiperSlide)`
@@ -23,13 +35,13 @@ const StyledSwiperSlide = styled(SwiperSlide)`
   */
 }
 
-const ProductSwiper = () => {
+const ProductsList = () => {
   return (
-    <Swiper
-      modules={[Navigation, Pagination, Keyboard, A11y]}
+    <StyledSwiper
+      modules={[Navigation, Keyboard, A11y]}
       spaceBetween={50}
       slidesPerView={1}
-      pagination={{ clickable: true }}
+      loop={true}
       keyboard={true}
       navigation={{}}
       onSlideChange={() => console.log("changed slide")}
@@ -48,8 +60,8 @@ const ProductSwiper = () => {
       <StyledSwiperSlide>
         <Product />
       </StyledSwiperSlide>
-    </Swiper>
+    </StyledSwiper>
   );
 };
 
-export default ProductSwiper;
+export default ProductsList;
