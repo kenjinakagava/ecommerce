@@ -1,19 +1,13 @@
 import styled from "styled-components";
 import AddToCartButton from "./Buttons/CTA/AddToCartButton";
 import MoreInfo from "./Buttons/CTA/MoreInfoButton";
-import { useContext } from "react";
-
-{
-  /*
 
 type Props = {
   productCover?: string;
   productTitle?: string;
-  productDescription?: string;
   productShortDescription?: string;
 };
-*/
-}
+
 const ProductWrapper = styled.div`
   display: flex;
   gap: 1rem;
@@ -22,7 +16,6 @@ const ProductWrapper = styled.div`
   @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
-    align-items: unset;
   }
 `;
 
@@ -68,15 +61,17 @@ const CTAButtonGroup = styled.div`
   }
 `;
 
-const Product = () => {
+const Product = (props: Props) => {
   return (
     <ProductWrapper>
       <ProductDisplay>
-        <ProductImage src={""} alt={"props.productAltText"} />
+        <ProductImage src={props.productCover} alt={"props.productAltText"} />
       </ProductDisplay>
       <ProductDisplayDescription>
-        <ProductTitle></ProductTitle>
-        <ProductShortDescription></ProductShortDescription>
+        <ProductTitle>{props.productTitle}</ProductTitle>
+        <ProductShortDescription>
+          {props.productShortDescription}
+        </ProductShortDescription>
         <CTAButtonGroup>
           <AddToCartButton />
           <MoreInfo />

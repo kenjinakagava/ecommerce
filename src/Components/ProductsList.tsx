@@ -1,5 +1,6 @@
 import Product from "./Product";
 import styled from "styled-components";
+import useFetch from "../Hooks/useFetch";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Keyboard, A11y } from "swiper";
 import "swiper/css";
@@ -7,35 +8,20 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/a11y";
 
-{
-  // maybe separate some of these styled components so this one doesn't get overloaded, the functionality on this one should be to render the product
-}
-
 const StyledSwiper = styled(Swiper)`
   --swiper-theme-color: #222;
+  .swiper-wrapper {
+    align-items: center;
+  }
 `;
-
-{
-  /*
-https://webaim.org/resources/contrastchecker/
-passes Graphical Objects and User Interface Components test 
-in both backgrounsd (#000 and #F7FAFC)
-*/
-}
 
 const StyledSwiperSlide = styled(SwiperSlide)`
   display: flex;
   justify-content: center;
 `;
 
-{
-  /*
-  AltText and Short Description won't be handled by the api
-  uppercase "S" refers to an object, lowercase "s" refers to just a string
-  */
-}
-
 const ProductsList = () => {
+  const { data, isLoading, error } = useFetch("http://localhost:3001/albums");
   return (
     <StyledSwiper
       modules={[Navigation, Keyboard, A11y]}
@@ -51,15 +37,17 @@ const ProductsList = () => {
         nextSlideMessage: "Next slide",
       }}
     >
-      <StyledSwiperSlide>
-        <Product />
-      </StyledSwiperSlide>
-      <StyledSwiperSlide>
-        <Product />
-      </StyledSwiperSlide>
-      <StyledSwiperSlide>
-        <Product />
-      </StyledSwiperSlide>
+      {data !== null
+        ? data.map((data) => (
+            <StyledSwiperSlide key={data.id}>
+              <Product
+                productCover={data.image}
+                productTitle={data.title}
+                productShortDescription={data.shortDescription}
+              ></Product>
+            </StyledSwiperSlide>
+          ))
+        : null}
     </StyledSwiper>
   );
 };
