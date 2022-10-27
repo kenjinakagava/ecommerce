@@ -8,7 +8,7 @@ const Global = createGlobalStyle`
     }
     body {
     background-color: #f7fafc;
-    font-family: "EB Garamond", serif;
+    font-family: 'Roboto Slab', serif;
     }
     ul {
         list-style: none;
