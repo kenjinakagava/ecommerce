@@ -12,6 +12,7 @@ const ProductWrapper = styled.div`
   display: flex;
   gap: 1rem;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   @media (min-width: 768px) {
     display: flex;
@@ -29,13 +30,13 @@ const ProductTitle = styled.h2`
 const ProductShortDescription = styled.p``;
 
 const ProductImage = styled.img`
-  position: relative;
   width: 100%;
-  z-index: 4;
+  @media (min-width: 768px) {
+    height: 240px;
+  }
 `;
 
 const ProductDisplay = styled.div`
-  position: relative;
   max-width: 250px;
   @media (max-width: 300px) {
     max-width: 200px;
@@ -46,10 +47,13 @@ const ProductDisplay = styled.div`
 `;
 
 const ProductDisplayDescription = styled.div`
-  max-width: 250px;
+  max-width: 200px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  @media (min-width: 320px) {
+    max-width: 250px;
+  }
 `;
 
 const CTAButtonGroup = styled.div`
@@ -65,7 +69,7 @@ const Product = (props: Props) => {
   return (
     <ProductWrapper>
       <ProductDisplay>
-        <ProductImage src={props.productCover} alt="" />
+        <ProductImage src={props.productCover} alt={props.productTitle} />
       </ProductDisplay>
       <ProductDisplayDescription>
         <ProductTitle>{props.productTitle}</ProductTitle>
@@ -77,9 +81,6 @@ const Product = (props: Props) => {
           <CTALink to={`/${props.productTitle}`} content="More Info" />
         </CTAButtonGroup>
       </ProductDisplayDescription>
-      {
-        // make a vinyl record in css later
-      }
     </ProductWrapper>
   );
 };

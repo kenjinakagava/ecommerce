@@ -1,13 +1,5 @@
 import { useState, useEffect } from "react";
-
-type Response = {
-  id?: number;
-  title?: string;
-  image?: string;
-  shortDescription?: string;
-  description?: string;
-  price?: number;
-};
+import { Response } from "../Interface";
 
 const useFetch = (url: string) => {
   const [data, setData] = useState<Array<Response> | null>(null);

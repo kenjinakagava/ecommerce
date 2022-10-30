@@ -7,14 +7,14 @@ type Props = {
   to: string;
 };
 
-const StyledCTALink = styled(CTAButton)``;
-
 const MoreInfo = (props: Props) => {
   return (
-    <StyledCTALink to={props.to} as={Link}>
+    <CTAButton to={props.to} as={Link}>
       {props.content}
-    </StyledCTALink>
+    </CTAButton>
   );
 };
 
 export default MoreInfo;
+
+// fixed overload by setting "strong type?" (not optional) on the to prop
