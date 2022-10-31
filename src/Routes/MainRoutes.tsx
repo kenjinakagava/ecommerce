@@ -23,6 +23,7 @@ const MainRoutes = (props: Props) => {
                 data.description !== undefined ? data.description : ""
               }
               cover={data.cover !== undefined ? data.cover : ""}
+              price={data.price}
             />
           }
         ></Route>

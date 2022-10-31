@@ -15,12 +15,12 @@ const SwiperWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 101px);
+  height: calc(100vh - 100px);
 `;
 
 const StyledSwiper = styled(Swiper)`
   --swiper-theme-color: #222;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 100px);
   .swiper-wrapper {
     align-items: center;
   }

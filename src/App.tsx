@@ -2,11 +2,13 @@ import Header from "./Components/Header";
 import Main from "./Components/Main";
 import Footer from "./Components/Footer";
 import Global from "./Styles/GlobalStyles";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProductsList from "./Components/ProductsList";
+import { BrowserRouter as Router } from "react-router-dom";
 import useFetch from "./Hooks/useFetch";
-import ProductDetails from "./Views/ProductDetails";
 import MainRoutes from "./Routes/MainRoutes";
+
+{
+  // implement blurhash later using isLoading, even if the loading is really quick i want to see how it works
+}
 
 function App() {
   const { data, isLoading, error } = useFetch("http://localhost:3001/albums");

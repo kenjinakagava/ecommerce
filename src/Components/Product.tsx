@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import AddToCartButton from "./Buttons/CTA/AddToCartButton";
+import CTAButton from "./Buttons/CTA/CTAButton";
 import CTALink from "./Buttons/CTA/CTALink";
 
 type Props = {
@@ -77,7 +77,7 @@ const Product = (props: Props) => {
           {props.productShortDescription}
         </ProductShortDescription>
         <CTAButtonGroup>
-          <AddToCartButton />
+          <CTAButton>Add to Cart</CTAButton>
           <CTALink to={`/${props.productTitle}`} content="More Info" />
         </CTAButtonGroup>
       </ProductDisplayDescription>
