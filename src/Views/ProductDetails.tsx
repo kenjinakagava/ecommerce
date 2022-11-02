@@ -18,9 +18,7 @@ const Details = styled.div`
 const ProductContainer = styled(Container)`
   display: block;
   padding: 1rem;
-  @media (min-width: 768px) {
-    height: calc(100vh - 100px);
-  }
+  min-height: calc(100vh - 110px);
 `;
 
 {
@@ -58,7 +56,7 @@ const ProductDetails = (props: Props) => {
           <ProductTitle>{props.title}</ProductTitle>
           <h3>{`$${props.price}`}</h3>
           <p>{props.description}</p>
-          <LargeAddToCartButton>Add to Cart</LargeAddToCartButton>
+          <LargeAddToCartButton>Buy Now</LargeAddToCartButton>
         </Details>
       </ProductWrapper>
     </ProductContainer>

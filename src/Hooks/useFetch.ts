@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Response } from "../Interface";
+import { ProductsAPIResponse } from "../Interface";
 
 const useFetch = (url: string) => {
-  const [data, setData] = useState<Array<Response> | null>(null);
+  const [data, setData] = useState<Array<ProductsAPIResponse> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 

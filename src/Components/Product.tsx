@@ -58,7 +58,7 @@ const ProductDisplayDescription = styled.div`
 
 const CTAButtonGroup = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   @media (min-width: 768px) {
     gap: 1rem;
     justify-content: unset;
@@ -77,8 +77,11 @@ const Product = (props: Props) => {
           {props.productShortDescription}
         </ProductShortDescription>
         <CTAButtonGroup>
-          <CTAButton>Add to Cart</CTAButton>
-          <CTALink to={`/${props.productTitle}`} content="More Info" />
+          <CTAButton>Buy Now</CTAButton>
+          <CTALink
+            to={`/${props.productTitle?.replaceAll(" ", "-")}`}
+            content="More Info"
+          />
         </CTAButtonGroup>
       </ProductDisplayDescription>
     </ProductWrapper>

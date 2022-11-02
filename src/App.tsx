@@ -13,16 +13,14 @@ import MainRoutes from "./Routes/MainRoutes";
 function App() {
   const { data, isLoading, error } = useFetch("http://localhost:3001/albums");
   return (
-    <div className="App">
-      <Router>
-        <Global />
-        <Header />
-        <Main>
-          <MainRoutes data={data} />
-        </Main>
-        <Footer />
-      </Router>
-    </div>
+    <Router>
+      <Global />
+      <Header />
+      <Main>
+        <MainRoutes data={data} />
+      </Main>
+      <Footer />
+    </Router>
   );
 }
 

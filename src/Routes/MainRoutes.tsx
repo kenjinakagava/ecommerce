@@ -1,21 +1,19 @@
 import { Route, Routes, Navigate } from "react-router-dom";
-import { Response } from "../Interface";
+import { APIData } from "../Interface";
 import ProductsList from "../Components/ProductsList";
 import ProductDetails from "../Views/ProductDetails";
 
-type Props = {
-  data: Array<Response> | null;
-};
-
-const MainRoutes = (props: Props) => {
+const MainRoutes = (props: APIData) => {
   return (
     <Routes>
-      <Route path="/" element={<ProductsList data={props.data} />}></Route>
-      <Route path="*" element={<Navigate to="/" replace={true} />}></Route>
+      <Route path="/" element={<ProductsList data={props.data} />} />
+      <Route path="/store" element={<div>placeholder for more products</div>} />
+      <Route path="/account" element={<div>placeholder for account</div>} />
+      <Route path="*" element={<Navigate to="/" replace={true} />} />
       {props.data?.map((data) => (
         <Route
           key={data.id}
-          path={data.title}
+          path={data.title?.replaceAll(" ", "-")}
           element={
             <ProductDetails
               title={data.title !== undefined ? data.title : ""}

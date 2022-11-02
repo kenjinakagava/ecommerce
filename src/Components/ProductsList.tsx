@@ -1,26 +1,21 @@
 import Product from "./Product";
 import styled from "styled-components";
-import { Response } from "../Interface";
+import { APIData } from "../Interface";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Keyboard, A11y } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/a11y";
 
-type Props = {
-  data: Array<Response> | null;
-};
-
 const SwiperWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 110px);
 `;
 
 const StyledSwiper = styled(Swiper)`
   --swiper-theme-color: #222;
-  height: calc(100vh - 100px);
   .swiper-wrapper {
     align-items: center;
   }
@@ -31,7 +26,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
   justify-content: center;
 `;
 
-const ProductsList = (props: Props) => {
+const ProductsList = (props: APIData) => {
   return (
     <SwiperWrapper>
       <StyledSwiper
