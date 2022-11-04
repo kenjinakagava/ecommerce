@@ -7,7 +7,8 @@
       "cover": "https://i.ibb.co/GcWfHrV/finallybigcover.webp",
       "shortDescription": "Evangelion Finally vinyl soundtrack features music from the series Neon Genesis Evangelion and the Rebuild of Evangelion film series.",
       "description": "Evangelion Finally is a collection of vocal songs performed by Yoko Takahashi and Megumi Hayashibara as heard in the hit anime series Neon Genesis Evangelion and the 2009 film Evangelion: 2.0 You Can (Not) Advance. The 15-track collection includes Takahashi’s well-known opening song to the series 'The Cruel Angel’s Thesis,' as well as new covers of original songs including 'FLY ME TO THE MOON (2020 Version),' a new recording of the classic jazz standard featured in the show’s end credit, and a new vocal arrangement from Takahashi of 'Kokoro yo Genshi ni Modore 2020.",
-      "price": 129.99
+      "price": 129.99,
+      "featured": true
     },
 
     {
@@ -17,7 +18,8 @@
       "cover": "https://i.ibb.co/M2jXvKV/onelastkissbigcover.webp",
       "shortDescription": "Utada Hikaru's new EP. Includes a new song 'One Last Kiss', the main theme song for the movie 'Evangelion: 3.0+1.0 Thrice Upon a Time'",
       "description": "TV anime series 'Neon Genesis EVANGELION' was the first broadcast in 1995, taking the world by storm. The 'Evangelion: New Theatrical Edition' film series started in 2007 with Evangelion: 1.0 You Are (Not) Alone, followed by Evangelion: 2.0 You Can (Not) Advance and Evangelion: 3.0 You Can (Not) Redo, all becoming record hits at the box office.",
-      "price": 129.99
+      "price": 129.99,
+      "featured": true
     },
     {
       "id": 3,
@@ -26,7 +28,8 @@
       "cover": "https://i.ibb.co/BKkXNnz/kiminonawabigcover.webp",
       "shortDescription": "Soundtrack of movie Your Name (君の名は。). 2LP black 180g vinyl. Includes booklet showing some art from the movie along with lyrics for the songs.",
       "description": "RADWIMPS made an album for the theatrical animation feature by Makoto Shinkai, 'Your Name.' This is vinyl edition. Consists of two discs (33RPM). *Since this product is extremely limited, only one copy may be purchased by a customer.",
-      "price": 804.47
+      "price": 804.47,
+      "featured": true
     }
   ]
 }

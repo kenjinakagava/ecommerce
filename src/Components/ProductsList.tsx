@@ -42,15 +42,17 @@ const ProductsList = (props: APIData) => {
           nextSlideMessage: "Next slide",
         }}
       >
-        {props.data?.map((data) => (
-          <StyledSwiperSlide key={data.id}>
-            <Product
-              productCover={data.image}
-              productTitle={data.title}
-              productShortDescription={data.shortDescription}
-            ></Product>
-          </StyledSwiperSlide>
-        ))}
+        {props.data?.map((data) =>
+          data.featured ? (
+            <StyledSwiperSlide key={data.id}>
+              <Product
+                productCover={data.image}
+                productTitle={data.title}
+                productShortDescription={data.shortDescription}
+              ></Product>
+            </StyledSwiperSlide>
+          ) : null
+        )}
       </StyledSwiper>
     </SwiperWrapper>
   );

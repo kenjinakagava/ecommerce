@@ -6,6 +6,7 @@ export type ProductsAPIResponse = {
   shortDescription?: string;
   description?: string;
   price?: number;
+  featured?: boolean;
 };
 
 export type APIData = {
