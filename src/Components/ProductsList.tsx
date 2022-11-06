@@ -46,9 +46,9 @@ const ProductsList = (props: APIData) => {
           data.featured ? (
             <StyledSwiperSlide key={data.id}>
               <Product
-                productCover={data.image}
-                productTitle={data.title}
-                productShortDescription={data.shortDescription}
+                cover={data.image}
+                title={data.title}
+                shortDescription={data.shortDescription}
               ></Product>
             </StyledSwiperSlide>
           ) : null

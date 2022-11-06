@@ -6,7 +6,7 @@ type Props = {
   to: string;
 };
 
-const MoreInfo = (props: Props) => {
+const CTARouterLink = (props: Props) => {
   return (
     <CTAButton to={props.to} as={Link}>
       {props.content}
@@ -14,6 +14,6 @@ const MoreInfo = (props: Props) => {
   );
 };
 
-export default MoreInfo;
+export default CTARouterLink;
 
 // fixed overload by setting "strong type?" (not optional) on the to prop

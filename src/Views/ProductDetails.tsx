@@ -1,19 +1,7 @@
 import styled from "styled-components";
 import Container from "../Styles/Container";
+import { ProductsAPIResponse } from "../Interface/index";
 import CTAButton from "../Components/Buttons/CTA/CTAButton";
-
-type Props = {
-  title: string;
-  description: string;
-  cover: string;
-  price: number | undefined;
-};
-
-const Details = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
 
 const ProductContainer = styled(Container)`
   display: block;
@@ -35,28 +23,41 @@ const ProductWrapper = styled.div`
   }
 `;
 
-const LargeAddToCartButton = styled(CTAButton)`
-  width: 100%;
-`;
-
 {
   // 1024 so the layout doesn't break on tablets
 }
 
-const ProductImage = styled.img``;
+const Details = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
 
-const ProductTitle = styled.h2``;
+const ProductDescription = styled.p`
+  white-space: pre-line;
+`;
 
-const ProductDetails = (props: Props) => {
+const LargeCTAButton = styled(CTAButton)`
+  width: 100%;
+`;
+
+const ProductDetails = (props: ProductsAPIResponse) => {
   return (
     <ProductContainer>
       <ProductWrapper>
-        <ProductImage src={props.cover} alt={props.title} />
+        <img src={props.cover} alt={props.title} />
         <Details>
-          <ProductTitle>{props.title}</ProductTitle>
+          <h2>{props.title}</h2>
           <h3>{`$${props.price}`}</h3>
-          <p>{props.description}</p>
-          <LargeAddToCartButton>Buy Now</LargeAddToCartButton>
+          <ProductDescription>{props.description}</ProductDescription>
+          <LargeCTAButton
+            as={"a"}
+            href={props.paymentLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Buy Now
+          </LargeCTAButton>
         </Details>
       </ProductWrapper>
     </ProductContainer>

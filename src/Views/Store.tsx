@@ -6,8 +6,13 @@ import { motion } from "framer-motion";
 
 const StoreWrapper = styled(Container)`
   flex-wrap: wrap;
+  gap: 5rem;
   @media (min-width: 768px) {
     justify-content: space-between;
+    min-height: 100vh;
+    align-items: center;
+    gap: 2rem;
+    margin: 20px auto;
   }
 `;
 
@@ -21,6 +26,7 @@ const StoreItemContainer = styled.li`
   }
   a {
     overflow: hidden;
+    border-radius: 8px;
   }
 `;
 
@@ -28,19 +34,15 @@ const StoreItemWrapper = styled.div``;
 
 const AlbumCover = styled(motion.img)`
   max-width: 100%;
-  height: 240px;
   border-radius: 8px;
-  height: unset;
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 `;
 
 const StoreView = (props: APIData) => {
   return (
     <StoreWrapper as="ul">
       {props.data?.map((data) => (
-        <StoreItemContainer>
+        <StoreItemContainer key={data.id}>
           <Link to={`/${data.title?.replaceAll(" ", "-")}`}>
             <AlbumCover
               src={data.cover}

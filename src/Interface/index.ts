@@ -7,6 +7,7 @@ export type ProductsAPIResponse = {
   description?: string;
   price?: number;
   featured?: boolean;
+  paymentLink?: string;
 };
 
 export type APIData = {

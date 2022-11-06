@@ -2,7 +2,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import { APIData } from "../Interface";
 import ProductsList from "../Components/ProductsList";
 import ProductDetails from "../Views/ProductDetails";
-import StoreView from "../Views/StoreView";
+import StoreView from "../Views/Store";
 
 const MainRoutes = (props: APIData) => {
   return (
@@ -23,6 +23,7 @@ const MainRoutes = (props: APIData) => {
               }
               cover={data.cover !== undefined ? data.cover : ""}
               price={data.price}
+              paymentLink={data.paymentLink}
             />
           }
         ></Route>

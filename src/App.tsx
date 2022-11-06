@@ -1,5 +1,4 @@
 import Header from "./Components/Header";
-import Main from "./Components/Main";
 import Footer from "./Components/Footer";
 import Global from "./Styles/GlobalStyles";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -16,9 +15,9 @@ function App() {
     <Router>
       <Global />
       <Header />
-      <Main>
+      <main>
         <MainRoutes data={data} />
-      </Main>
+      </main>
       <Footer />
     </Router>
   );

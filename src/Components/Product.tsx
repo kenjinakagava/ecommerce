@@ -1,12 +1,6 @@
 import styled from "styled-components";
-import CTAButton from "./Buttons/CTA/CTAButton";
-import CTALink from "./Buttons/CTA/CTALink";
-
-type Props = {
-  productCover?: string;
-  productTitle?: string;
-  productShortDescription?: string;
-};
+import CTARouterLink from "./Buttons/CTA/CTARouterLink";
+import { ProductsAPIResponse } from "../Interface";
 
 const ProductWrapper = styled.div`
   display: flex;
@@ -66,21 +60,24 @@ const CTAButtonGroup = styled.div`
   }
 `;
 
-const Product = (props: Props) => {
+const Product = (props: ProductsAPIResponse) => {
   return (
     <ProductWrapper>
       <ProductDisplay>
-        <ProductImage src={props.productCover} alt={props.productTitle} />
+        <ProductImage src={props.cover} alt={props.title} />
       </ProductDisplay>
       <ProductDisplayDescription>
-        <ProductTitle>{props.productTitle}</ProductTitle>
+        <ProductTitle>{props.title}</ProductTitle>
         <ProductShortDescription>
-          {props.productShortDescription}
+          {props.shortDescription}
         </ProductShortDescription>
         <CTAButtonGroup>
-          <CTAButton>Buy Now</CTAButton>
-          <CTALink
-            to={`/${props.productTitle?.replaceAll(" ", "-")}`}
+          <CTARouterLink
+            to={props.paymentLink !== undefined ? props.paymentLink : ""}
+            content="Buy Now"
+          />
+          <CTARouterLink
+            to={`/${props.title?.replaceAll(" ", "-")}`}
             content="More Info"
           />
         </CTAButtonGroup>
