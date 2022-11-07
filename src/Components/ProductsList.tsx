@@ -49,6 +49,7 @@ const ProductsList = (props: APIData) => {
                 cover={data.image}
                 title={data.title}
                 shortDescription={data.shortDescription}
+                paymentLink={data.paymentLink}
               ></Product>
             </StyledSwiperSlide>
           ) : null

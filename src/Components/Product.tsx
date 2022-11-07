@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import CTARouterLink from "./Buttons/CTA/CTARouterLink";
 import { ProductsAPIResponse } from "../Interface";
+import CTAButton from "./Buttons/CTA/CTAButton";
+import { Link } from "react-router-dom";
 
 const ProductWrapper = styled.div`
   display: flex;
@@ -9,7 +10,6 @@ const ProductWrapper = styled.div`
   justify-content: center;
   align-items: center;
   @media (min-width: 768px) {
-    display: flex;
     flex-direction: row;
   }
 `;
@@ -20,8 +20,6 @@ const ProductTitle = styled.h2`
     font-size: 21px;
   }
 `;
-
-const ProductShortDescription = styled.p``;
 
 const ProductImage = styled.img`
   width: 100%;
@@ -53,14 +51,25 @@ const ProductDisplayDescription = styled.div`
 
 const CTAButtonGroup = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  @media (min-width: 320px) {
+    justify-content: space-around;
+  }
   @media (min-width: 768px) {
     gap: 1rem;
     justify-content: unset;
   }
 `;
 
+const StyledCTAButton = styled(CTAButton)`
+  @media (min-width: 320px) {
+    width: 45%;
+  }
+  @media (min-width: 768px);
+`;
+
 const Product = (props: ProductsAPIResponse) => {
+  console.log(props.paymentLink);
   return (
     <ProductWrapper>
       <ProductDisplay>
@@ -68,18 +77,24 @@ const Product = (props: ProductsAPIResponse) => {
       </ProductDisplay>
       <ProductDisplayDescription>
         <ProductTitle>{props.title}</ProductTitle>
-        <ProductShortDescription>
-          {props.shortDescription}
-        </ProductShortDescription>
+        <p>{props.shortDescription}</p>
         <CTAButtonGroup>
-          <CTARouterLink
-            to={props.paymentLink !== undefined ? props.paymentLink : ""}
-            content="Buy Now"
-          />
-          <CTARouterLink
+          <StyledCTAButton
+            as={"a"}
+            href={props.paymentLink !== undefined ? props.paymentLink : ""}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Buy the album ${props.title}`}
+          >
+            Buy Now
+          </StyledCTAButton>
+          <StyledCTAButton
+            as={Link}
             to={`/${props.title?.replaceAll(" ", "-")}`}
-            content="More Info"
-          />
+            aria-label={`Learn more about the album ${props.title}`}
+          >
+            View Details
+          </StyledCTAButton>
         </CTAButtonGroup>
       </ProductDisplayDescription>
     </ProductWrapper>

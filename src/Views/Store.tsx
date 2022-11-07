@@ -20,17 +20,15 @@ const StoreItemContainer = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   @media (min-width: 768px) {
-    width: 30%;
-    height: 50%;
+    width: 40%;
+    align-self: stretch;
   }
-  a {
-    overflow: hidden;
-    border-radius: 8px;
+  @media (min-width: 1024px) {
+    width: 30%;
   }
 `;
-
-const StoreItemWrapper = styled.div``;
 
 const AlbumCover = styled(motion.img)`
   max-width: 100%;
@@ -38,18 +36,23 @@ const AlbumCover = styled(motion.img)`
   cursor: pointer;
 `;
 
+const StyledLink = styled(Link)`
+  overflow: hidden;
+  border-radius: 8px;
+`;
+
 const StoreView = (props: APIData) => {
   return (
     <StoreWrapper as="ul">
       {props.data?.map((data) => (
         <StoreItemContainer key={data.id}>
-          <Link to={`/${data.title?.replaceAll(" ", "-")}`}>
+          <StyledLink to={`/${data.title?.replaceAll(" ", "-")}`}>
             <AlbumCover
               src={data.cover}
               alt={data.title}
               whileHover={{ scale: 1.15 }}
             />
-          </Link>
+          </StyledLink>
           <h2>{data.title}</h2>
           <h3>${data.price}</h3>
         </StoreItemContainer>
