@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { ProductsAPIResponse } from "../Interface";
-import CTAButton from "./Buttons/CTA/CTAButton";
+import { ProductsAPIResponse } from "../../Interface";
+import CTAButton from "../../Components/Buttons/CTA/CTAButton";
 import { Link } from "react-router-dom";
 
 const ProductWrapper = styled.div`
@@ -68,8 +68,7 @@ const StyledCTAButton = styled(CTAButton)`
   @media (min-width: 768px);
 `;
 
-const Product = (props: ProductsAPIResponse) => {
-  console.log(props.paymentLink);
+const ProductSwiperItem = (props: ProductsAPIResponse) => {
   return (
     <ProductWrapper>
       <ProductDisplay>
@@ -101,4 +100,4 @@ const Product = (props: ProductsAPIResponse) => {
   );
 };
 
-export default Product;
+export default ProductSwiperItem;

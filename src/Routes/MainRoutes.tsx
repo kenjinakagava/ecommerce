@@ -1,6 +1,6 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import { APIData } from "../Interface";
-import ProductsList from "../Components/ProductsList";
+import ProductsList from "../Views/Home/ProductsSwiper";
 import ProductDetails from "../Views/ProductDetails";
 import StoreView from "../Views/Store";
 

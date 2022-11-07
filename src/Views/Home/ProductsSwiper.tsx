@@ -1,6 +1,6 @@
-import Product from "./Product";
+import ProductSwiperItem from "./ProductSwiperItem";
 import styled from "styled-components";
-import { APIData } from "../Interface";
+import { APIData } from "../../Interface";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Keyboard, A11y } from "swiper";
 import "swiper/css";
@@ -26,7 +26,7 @@ const StyledSwiperSlide = styled(SwiperSlide)`
   justify-content: center;
 `;
 
-const ProductsList = (props: APIData) => {
+const ProductsSwiper = (props: APIData) => {
   return (
     <SwiperWrapper>
       <StyledSwiper
@@ -45,12 +45,12 @@ const ProductsList = (props: APIData) => {
         {props.data?.map((data) =>
           data.featured ? (
             <StyledSwiperSlide key={data.id}>
-              <Product
+              <ProductSwiperItem
                 cover={data.image}
                 title={data.title}
                 shortDescription={data.shortDescription}
                 paymentLink={data.paymentLink}
-              ></Product>
+              ></ProductSwiperItem>
             </StyledSwiperSlide>
           ) : null
         )}
@@ -59,4 +59,4 @@ const ProductsList = (props: APIData) => {
   );
 };
 
-export default ProductsList;
+export default ProductsSwiper;
