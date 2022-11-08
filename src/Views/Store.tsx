@@ -31,7 +31,8 @@ const StoreItemContainer = styled.li`
 `;
 
 const AlbumCover = styled(motion.img)`
-  max-width: 100%;
+  max-inline-size: 100%;
+  block-size: auto;
   border-radius: 8px;
   cursor: pointer;
 `;
@@ -51,6 +52,8 @@ const StoreView = (props: APIData) => {
               src={data.cover}
               alt={data.title}
               whileHover={{ scale: 1.15 }}
+              height={500}
+              width={500}
             />
           </StyledLink>
           <h2>{data.title}</h2>

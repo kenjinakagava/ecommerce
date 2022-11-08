@@ -22,17 +22,14 @@ const ProductTitle = styled.h2`
 `;
 
 const ProductImage = styled.img`
-  width: 100%;
-  height: 150px;
-  @media (min-width: 768px) {
-    height: 240px;
-  }
+  max-inline-size: 100%;
+  block-size: auto;
 `;
 
 const ProductDisplay = styled.div`
-  max-width: 250px;
-  @media (max-width: 300px) {
-    max-width: 200px;
+  max-width: 200px;
+  @media (min-width: 300px) {
+    max-width: 240px;
   }
   @media (min-width: 768px) {
     max-width: 400px;
@@ -72,7 +69,12 @@ const ProductSwiperItem = (props: ProductsAPIResponse) => {
   return (
     <ProductWrapper>
       <ProductDisplay>
-        <ProductImage src={props.cover} alt={props.title} />
+        <ProductImage
+          src={props.cover}
+          alt={props.title}
+          width={300}
+          height={300}
+        />
       </ProductDisplay>
       <ProductDisplayDescription>
         <ProductTitle>{props.title}</ProductTitle>

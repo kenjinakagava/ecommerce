@@ -2,10 +2,11 @@ import ProductSwiperItem from "./ProductSwiperItem";
 import styled from "styled-components";
 import { APIData } from "../../Interface";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Keyboard, A11y } from "swiper";
+import { Navigation, Keyboard, A11y, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/a11y";
+import "swiper/css/pagination";
 
 const SwiperWrapper = styled.div`
   display: flex;
@@ -30,13 +31,13 @@ const ProductsSwiper = (props: APIData) => {
   return (
     <SwiperWrapper>
       <StyledSwiper
-        modules={[Navigation, Keyboard, A11y]}
+        modules={[Navigation, Keyboard, A11y, Pagination]}
         spaceBetween={50}
         slidesPerView={1}
-        loop={true}
         keyboard={true}
         grabCursor={true}
         navigation={{}}
+        pagination={true}
         a11y={{
           prevSlideMessage: "Previous slide",
           nextSlideMessage: "Next slide",
@@ -46,7 +47,7 @@ const ProductsSwiper = (props: APIData) => {
           data.featured ? (
             <StyledSwiperSlide key={data.id}>
               <ProductSwiperItem
-                cover={data.image}
+                cover={data.cover}
                 title={data.title}
                 shortDescription={data.shortDescription}
                 paymentLink={data.paymentLink}
