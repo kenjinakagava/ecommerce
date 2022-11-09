@@ -3,9 +3,12 @@
     {
       "id": 1,
       "title": "Evangelion Finally",
-      "image": "https://i.ibb.co/h2VyZnV/finallysmallcover-1.webp",
-      "cover": "https://i.ibb.co/GcWfHrV/finallybigcover.webp",
-      "shortDescription": "Evangelion Finally vinyl soundtrack features music from the series Neon Genesis Evangelion and the Rebuild of Evangelion film series.",
+      "cover": [
+        "https://i.ibb.co/QKBDP3r/finallysmallcover.webp",
+        "https://i.ibb.co/0XgWSQq/finallymediumcover.webp",
+        "https://i.ibb.co/GcWfHrV/finallybigcover.webp"
+      ],
+      "shortDescription": "Evangelion Finally features music from the series Neon Genesis Evangelion and the Rebuild of Evangelion film series.",
       "description": "Evangelion Finally is a collection of vocal songs performed by Yoko Takahashi and Megumi Hayashibara as heard in the hit anime series Neon Genesis Evangelion and the 2009 film Evangelion: 2.0 You Can (Not) Advance.\n The 15-track collection includes Takahashi’s well-known opening song to the series 'The Cruel Angel’s Thesis,' as well as new covers of original songs including 'FLY ME TO THE MOON (2020 Version),' a new recording of the classic jazz standard featured in the show’s end credit, and a new vocal arrangement from Takahashi of 'Kokoro yo Genshi ni Modore 2020.",
       "price": 129.99,
       "paymentLink": "https://buy.stripe.com/test_aEUeVGe4n0ff3za006",
@@ -15,9 +18,12 @@
     {
       "id": 2,
       "title": "One Last Kiss",
-      "image": "https://i.ibb.co/f8QDdvT/onelastkisssmallcover.webp",
-      "cover": "https://i.ibb.co/M2jXvKV/onelastkissbigcover.webp",
-      "shortDescription": "Utada Hikaru's new EP. Includes a new song 'One Last Kiss', the main theme song for the movie 'Evangelion: 3.0+1.0 Thrice Upon a Time'",
+      "cover": [
+        "https://i.ibb.co/Qn5crrs/onelastkisssmallcover.webp",
+        "https://i.ibb.co/4RZs8ZF/onelastkissmediumcover.webp",
+        "https://i.ibb.co/M2jXvKV/onelastkissbigcover.webp"
+      ],
+      "shortDescription": "Utada Hikaru's new EP.\n Includes a new song 'One Last Kiss', the main theme song for the movie 'Evangelion: 3.0+1.0 Thrice Upon a Time'",
       "description": "TV anime series 'Neon Genesis EVANGELION' was the first broadcast in 1995, taking the world by storm.\n The 'Evangelion: New Theatrical Edition' film series started in 2007 with Evangelion: 1.0 You Are (Not) Alone, followed by Evangelion: 2.0 You Can (Not) Advance and Evangelion: 3.0 You Can (Not) Redo, all becoming record hits at the box office.",
       "price": 129.99,
       "paymentLink": "https://buy.stripe.com/test_7sI7te1hB8LLc5G5kp",
@@ -26,9 +32,12 @@
     {
       "id": 3,
       "title": "Your Name Ost",
-      "image": "https://i.ibb.co/D1v12Wm/kiminonawasmallcover.webp",
-      "cover": "https://i.ibb.co/BKkXNnz/kiminonawabigcover.webp",
-      "shortDescription": "Soundtrack of movie Your Name (君の名は。). 2LP black 180g vinyl. Includes booklet showing some art from the movie along with lyrics for the songs.",
+      "cover": [
+        "https://i.ibb.co/s6tQw6f/kiminonawasmallcover.webp",
+        "https://i.ibb.co/ykXYkLy/kiminonawamediumcover.webp",
+        "https://i.ibb.co/BKkXNnz/kiminonawabigcover.webp"
+      ],
+      "shortDescription": "Soundtrack of movie Your Name (君の名は。). 2LP black 180g vinyl.\n Includes booklet showing some art from the movie along with lyrics for the songs.",
       "description": "RADWIMPS made an album for the theatrical animation feature by Makoto Shinkai, 'Your Name.'\n This is vinyl edition. Consists of two discs (33RPM).\n *Since this product is extremely limited, only one copy may be purchased by a customer.",
       "price": 804.47,
       "paymentLink": "https://buy.stripe.com/test_4gw8xi0dx3rr2v6148",
@@ -37,7 +46,11 @@
     {
       "id": 4,
       "title": "A Silent Voice Original Soundtrack",
-      "cover": "https://i.ibb.co/DCqQvzD/koenokatachibigcover.webp",
+      "cover": [
+        "https://i.ibb.co/pXS4ds2/koenokatachismallcover.webp",
+        "https://i.ibb.co/yVWdD1G/koenokatachimediumcover.webp",
+        "https://i.ibb.co/DCqQvzD/koenokatachibigcover.webp"
+      ],
       "shortDescription": "The complete original soundtrack from the critically acclaimed anime movie A Silent Voice, produced by Kyoto Animation and directed by Naoko Yamada, and adapted from the award-winning manga of the same name.",
       "description": "The complete original soundtrack from the critically acclaimed anime movie A Silent Voice, produced by Kyoto Animation and directed by Naoko Yamada, and adapted from the award-winning manga of the same name.\nThis emotional journey of ambient music is composed by Kensuke Ushio, whose other soundtrack compositions for anime include the Netflix series Devilman Crybaby and Japan Sinks 2020.",
       "price": 53.98,
@@ -47,7 +60,11 @@
     {
       "id": 5,
       "title": "Attack on Titan Season 1 Original Soundtrack",
-      "cover": "https://i.ibb.co/QPf1c9v/aotbigcover.webp",
+      "cover": [
+        "https://i.ibb.co/GVJZwDs/aotsmallcover.webp",
+        "https://i.ibb.co/T1V3BRT/aotmediumcover.webp",
+        "https://i.ibb.co/QPf1c9v/aotbigcover.webp"
+      ],
       "shortDescription": "The soundtrack to the first season 1 of the hit anime series, Attack on Titan, composed by Hiroyuki Sawano – now on vinyl for the first time!",
       "description": "The soundtrack to the first season 1 of the hit anime series, Attack on Titan, composed by Hiroyuki Sawano – now on vinyl for the first time!\nThe first season of the TV series broadcast on Adult Swim in 2014 and its music is composed by prolific and popular Japanese composer Hiroyuki Sawano (Promare, Kill la Kill, Blue Exorcist), who provides a bombastic mix of electronic music, guitar-driven tracks and orchestral overtones.\nComes in gatefold packaging with 3 x 120 Clear With Blue & Black Sky Splatter colored vinyl.",
       "price": 58.86,
@@ -56,7 +73,11 @@
     {
       "id": 6,
       "title": "My Neighbor Totoro: Image Album Original Soundtrack",
-      "cover": "https://i.ibb.co/fCt2mJ0/totorobigcover.webp",
+      "cover": [
+        "https://i.ibb.co/GVJZwDs/aotsmallcover.webp",
+        "https://i.ibb.co/yp2tWzH/totoromediumcover.webp",
+        "https://i.ibb.co/fCt2mJ0/totorobigcover.webp"
+      ],
       "shortDescription": "Limited vinyl LP pressing. Image album created with the concept of 'making songs which children really want and can sing out loud with their mouth widely opened.'",
       "description": "Limited vinyl LP pressing. Image album created with the concept of 'making songs which children really want and can sing out loud with their mouth widely opened.'\n Including 10 songs + one instrumental. Song : Azumi Inoue, Joe Hisaishi, Kumiko Mori, Taku Kitahara, Suginami Junior Chorus. With 16 pages of all the melody scores.",
       "price": 56.94,

@@ -1,6 +1,6 @@
 import Container from "../Styles/Container";
 import styled from "styled-components";
-import { APIData } from "../Interface";
+import { ProductsAPIResponse } from "../Interface";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -42,16 +42,17 @@ const StyledLink = styled(Link)`
   border-radius: 8px;
 `;
 
-const StoreView = (props: APIData) => {
+const StoreView = (props: ProductsAPIResponse) => {
   return (
     <StoreWrapper as="ul">
       {props.data?.map((data) => (
         <StoreItemContainer key={data.id}>
           <StyledLink to={`/${data.title?.replaceAll(" ", "-")}`}>
             <AlbumCover
-              src={data.cover}
+              src={data.cover?.[0]}
+              srcSet={`${data.cover?.[0]} 300w, ${data.cover?.[1]} 600w, ${data.cover?.[2]} 1200w`}
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 90vw"
               alt={data.title}
-              whileHover={{ scale: 1.15 }}
               height={500}
               width={500}
             />

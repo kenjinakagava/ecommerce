@@ -66,11 +66,17 @@ const StyledCTAButton = styled(CTAButton)`
 `;
 
 const ProductSwiperItem = (props: ProductsAPIResponse) => {
+  const smallCover = props.cover?.[0];
+  const mediumCover = props.cover?.[1];
+  const bigCover = props.cover?.[2];
+
   return (
     <ProductWrapper>
       <ProductDisplay>
         <ProductImage
-          src={props.cover}
+          src={smallCover}
+          srcSet={`${smallCover} 300w, ${mediumCover} 600w, ${bigCover} 1200w`}
+          sizes="(min-width: 1024px) 40vw, (min-width: 768px) 25vw, 80vw"
           alt={props.title}
           width={300}
           height={300}

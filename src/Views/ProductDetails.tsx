@@ -27,6 +27,11 @@ const ProductWrapper = styled.div`
   // 1024 so the layout doesn't break on tablets
 }
 
+const ProductImage = styled.img`
+  max-inline-size: 100%;
+  block-size: auto;
+`;
+
 const Details = styled.div`
   display: flex;
   flex-direction: column;
@@ -42,10 +47,21 @@ const LargeCTAButton = styled(CTAButton)`
 `;
 
 const ProductDetails = (props: ProductsAPIResponse) => {
+  const smallCover = props.cover?.[0];
+  const mediumCover = props.cover?.[1];
+  const bigCover = props.cover?.[2];
+
   return (
     <ProductContainer>
       <ProductWrapper>
-        <img src={props.cover} alt={props.title} />
+        <ProductImage
+          src={smallCover}
+          srcSet={`${smallCover} 300w, ${mediumCover} 600w, ${bigCover} 1200w`}
+          width={600}
+          height={600}
+          sizes="(min-width: 1024px) 66vw, 80vw"
+          alt={props.title}
+        />
         <Details>
           <h2>{props.title}</h2>
           <h3>{`$${props.price}`}</h3>

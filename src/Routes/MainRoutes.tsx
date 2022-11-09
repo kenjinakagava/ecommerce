@@ -1,10 +1,10 @@
 import { Route, Routes, Navigate } from "react-router-dom";
-import { APIData } from "../Interface";
+import { ProductsAPIResponse } from "../Interface";
 import ProductsList from "../Views/Home/ProductsSwiper";
 import ProductDetails from "../Views/ProductDetails";
 import StoreView from "../Views/Store";
 
-const MainRoutes = (props: APIData) => {
+const MainRoutes = (props: ProductsAPIResponse) => {
   return (
     <Routes>
       <Route path="/" element={<ProductsList data={props.data} />} />
@@ -21,7 +21,7 @@ const MainRoutes = (props: APIData) => {
               description={
                 data.description !== undefined ? data.description : ""
               }
-              cover={data.cover !== undefined ? data.cover : ""}
+              cover={data.cover !== undefined ? data.cover : [""]}
               price={data.price}
               paymentLink={data.paymentLink}
             />
