@@ -10,14 +10,14 @@ const useFetch = (url: string) => {
     fetch(url)
       .then((res) => {
         if (!res.ok) {
-          throw Error("placeholder");
+          throw Error("Remember to run the server by typing npm run server!");
         }
         return res.json();
       })
       .then((data) => {
         setData(data);
+        setError("a");
         setIsLoading(false);
-        setError(null);
       })
       .catch((err) => {
         setError(err);
@@ -33,5 +33,3 @@ const useFetch = (url: string) => {
 };
 
 export default useFetch;
-
-// to make this hook reusable lets make it take an interface prop later

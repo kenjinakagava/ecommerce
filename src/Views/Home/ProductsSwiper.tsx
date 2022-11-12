@@ -33,7 +33,7 @@ const ProductsSwiper = (props: ProductsAPIResponse) => {
       keyboard={true}
       grabCursor={true}
       navigation={{}}
-      pagination={true}
+      pagination={{}}
       a11y={{
         prevSlideMessage: "Previous slide",
         nextSlideMessage: "Next slide",

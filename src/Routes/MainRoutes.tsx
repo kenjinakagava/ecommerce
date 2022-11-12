@@ -3,20 +3,21 @@ import { ProductsAPIResponse } from "../Interface";
 import ProductsList from "../Views/Home/ProductsSwiper";
 import ProductDetails from "../Views/ProductDetails";
 import StoreView from "../Views/Store";
+import Page404 from "../Views/404";
 
 const MainRoutes = (props: ProductsAPIResponse) => {
   return (
     <Routes>
       <Route path="/" element={<ProductsList data={props.data} />} />
       <Route path="/store" element={<StoreView data={props.data} />} />
-      <Route path="/account" element={<div>placeholder for account</div>} />
-      <Route path="*" element={<Navigate to="/" replace={true} />} />
+      <Route path="*" element={<Page404 />} />
       {props.data?.map((data) => (
         <Route
           key={data.id}
           path={data.title?.replaceAll(" ", "-")}
           element={
             <ProductDetails
+              data={props.data}
               title={data.title !== undefined ? data.title : ""}
               description={
                 data.description !== undefined ? data.description : ""

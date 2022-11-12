@@ -1,9 +1,10 @@
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-import Global from "./Styles/GlobalStyles";
 import { BrowserRouter as Router } from "react-router-dom";
 import useFetch from "./Hooks/useFetch";
 import MainRoutes from "./Routes/MainRoutes";
+import Loading from "./Views/Loading";
+import Error from "./Views/Error";
 
 {
   // implement blurhash later using isLoading, even if the loading is really quick i want to see how it works
@@ -11,9 +12,13 @@ import MainRoutes from "./Routes/MainRoutes";
 
 function App() {
   const { data, isLoading, error } = useFetch("http://localhost:3001/albums");
+  if (isLoading) return <Loading />;
+  if (error) {
+    console.log(error);
+    return <Error />;
+  }
   return (
     <Router>
-      <Global />
       <Header />
       <main>
         <MainRoutes data={data} />

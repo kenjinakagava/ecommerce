@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ProductsAPIResponse } from "../../Interface";
 import CTAButton from "../../Components/Buttons/CTA/CTAButton";
 import { Link } from "react-router-dom";
+import AlbumCover from "../../Styles/AlbumCover";
 
 const ProductWrapper = styled.div`
   display: flex;
@@ -15,15 +16,9 @@ const ProductWrapper = styled.div`
 `;
 
 const ProductTitle = styled.h2`
-  text-align: center;
   @media (max-width: 300px) {
-    font-size: 21px;
+    font-size: 1.3125rem;
   }
-`;
-
-const ProductImage = styled.img`
-  max-inline-size: 100%;
-  block-size: auto;
 `;
 
 const ProductDisplay = styled.div`
@@ -62,7 +57,6 @@ const StyledCTAButton = styled(CTAButton)`
   @media (min-width: 320px) {
     width: 45%;
   }
-  @media (min-width: 768px);
 `;
 
 const ProductSwiperItem = (props: ProductsAPIResponse) => {
@@ -73,7 +67,7 @@ const ProductSwiperItem = (props: ProductsAPIResponse) => {
   return (
     <ProductWrapper>
       <ProductDisplay>
-        <ProductImage
+        <AlbumCover
           src={smallCover}
           srcSet={`${smallCover} 300w, ${mediumCover} 600w, ${bigCover} 1200w`}
           sizes="(min-width: 1024px) 40vw, (min-width: 768px) 25vw, 80vw"

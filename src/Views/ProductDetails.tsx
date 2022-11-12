@@ -2,9 +2,9 @@ import styled from "styled-components";
 import Container from "../Styles/Container";
 import { ProductsAPIResponse } from "../Interface/index";
 import CTAButton from "../Components/Buttons/CTA/CTAButton";
+import AlbumCover from "../Styles/AlbumCover";
 
 const ProductContainer = styled(Container)`
-  display: block;
   padding: 1rem;
   min-height: calc(100vh - 110px);
 `;
@@ -26,11 +26,6 @@ const ProductWrapper = styled.div`
 {
   // 1024 so the layout doesn't break on tablets
 }
-
-const ProductImage = styled.img`
-  max-inline-size: 100%;
-  block-size: auto;
-`;
 
 const Details = styled.div`
   display: flex;
@@ -54,7 +49,7 @@ const ProductDetails = (props: ProductsAPIResponse) => {
   return (
     <ProductContainer>
       <ProductWrapper>
-        <ProductImage
+        <AlbumCover
           src={smallCover}
           srcSet={`${smallCover} 300w, ${mediumCover} 600w, ${bigCover} 1200w`}
           width={600}

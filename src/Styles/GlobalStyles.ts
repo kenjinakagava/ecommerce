@@ -1,14 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
-const Global = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
     body {
-    background-color: #f7fafc;
-    font-family: 'Roboto Slab', serif;
+        background-color: #f7fafc;
+        font-family: 'Roboto Slab', serif;
     }
     ul {
         list-style: none;
@@ -22,4 +22,4 @@ const Global = createGlobalStyle`
     }
 `;
 
-export default Global;
+export default GlobalStyles;
