@@ -4,7 +4,6 @@ const StylesFooter = styled.footer`
   display: flex;
   justify-content: center;
   gap: 1rem;
-  padding-bottom: 0.5rem;
 `;
 
 const Footer = () => {

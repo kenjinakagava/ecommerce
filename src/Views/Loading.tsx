@@ -7,3 +7,5 @@ const Loading = styled.div`
 `;
 
 export default Loading;
+
+// Loading doesn't take long so I kept the loading screen very minimal

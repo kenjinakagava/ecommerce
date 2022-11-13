@@ -19,9 +19,7 @@ const StoreBrand = styled.h1`
   margin-left: 1rem;
 `;
 
-{
-  // width: min-content improves the site usability on small screens, before applying this style
-}
+// width: min-content improves the site usability on small screens, before applying this style
 
 const AnimatedSvg = styled.svg`
   animation: animate-spin 6s infinite linear;

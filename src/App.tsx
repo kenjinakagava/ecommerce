@@ -6,12 +6,12 @@ import MainRoutes from "./Routes/MainRoutes";
 import Loading from "./Views/Loading";
 import Error from "./Views/Error";
 
-{
-  // implement blurhash later using isLoading, even if the loading is really quick i want to see how it works
-}
+// implement blurhash later using isLoading, even if the loading is really quick i want to see how it works
 
 function App() {
-  const { data, isLoading, error } = useFetch("http://localhost:3001/albums");
+  const { data, isLoading, error } = useFetch(
+    "https://kenjinakagava.github.io/ecommerce-api/albums.json"
+  );
   if (isLoading) return <Loading />;
   if (error) {
     console.log(error);

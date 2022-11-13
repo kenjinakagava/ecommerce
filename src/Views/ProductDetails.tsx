@@ -1,17 +1,13 @@
 import styled from "styled-components";
 import Container from "../Styles/Container";
 import { ProductsAPIResponse } from "../Interface/index";
-import CTAButton from "../Components/Buttons/CTA/CTAButton";
+import CTAButton from "../Components/Buttons/CTAButton";
 import AlbumCover from "../Styles/AlbumCover";
 
 const ProductContainer = styled(Container)`
   padding: 1rem;
   min-height: calc(100vh - 110px);
 `;
-
-{
-  // here i'm changing the display to block so the image isn't resized by flexbox when changing the main content height
-}
 
 const ProductWrapper = styled.div`
   display: flex;
@@ -23,9 +19,7 @@ const ProductWrapper = styled.div`
   }
 `;
 
-{
-  // 1024 so the layout doesn't break on tablets
-}
+// 1024 so the layout doesn't break on tablets
 
 const Details = styled.div`
   display: flex;

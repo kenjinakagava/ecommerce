@@ -7,7 +7,9 @@ import { motion } from "framer-motion";
 const StoreWrapper = styled(Container)`
   display: grid;
   gap: 3rem;
-  margin: 20px auto;
+  margin: 0 auto;
+  padding-top: 20px;
+  min-height: calc(100vh - 110px);
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 45%);
     justify-content: space-between;
@@ -28,6 +30,7 @@ const StoreItemContainer = styled.li`
 `;
 
 const CoverWrapper = styled.div`
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 8px;
 `;

@@ -2,7 +2,7 @@ import ProductSwiperItem from "./ProductSwiperItem";
 import styled from "styled-components";
 import { ProductsAPIResponse } from "../../Interface";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Keyboard, A11y, Pagination } from "swiper";
+import { Navigation, Keyboard, A11y } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/a11y";
@@ -27,13 +27,12 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 const ProductsSwiper = (props: ProductsAPIResponse) => {
   return (
     <StyledSwiper
-      modules={[Navigation, Keyboard, A11y, Pagination]}
+      modules={[Navigation, Keyboard, A11y]}
       spaceBetween={50}
       slidesPerView={1}
       keyboard={true}
       grabCursor={true}
       navigation={{}}
-      pagination={{}}
       a11y={{
         prevSlideMessage: "Previous slide",
         nextSlideMessage: "Next slide",
