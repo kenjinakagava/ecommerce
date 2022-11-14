@@ -16,20 +16,17 @@ const ProductWrapper = styled.div`
 `;
 
 const ProductTitle = styled.h2`
-  @media (max-width: 300px) {
-    font-size: 1.3125rem;
+  font-size: 1.3125rem;
+  text-align: center;
+  @media (min-width: 300px) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    text-align: left;
   }
 `;
 
-const ProductDisplay = styled.div`
-  max-width: 200px;
-  @media (min-width: 300px) {
-    max-width: 240px;
-  }
-  @media (min-width: 768px) {
-    max-width: 400px;
-  }
-`;
+const ProductDisplay = styled.div``;
 
 const ProductDisplayDescription = styled.div`
   max-width: 200px;
@@ -82,7 +79,7 @@ const ProductSwiperItem = (props: ProductsAPIResponse) => {
         <CTAButtonGroup>
           <StyledCTAButton
             as={"a"}
-            href={props.paymentLink !== undefined ? props.paymentLink : ""}
+            href={props.paymentLink}
             target="_blank"
             rel="noreferrer"
             aria-label={`Buy the album ${props.title}`}

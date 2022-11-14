@@ -6,7 +6,7 @@ const ErrorContainer = styled(Container)`
   flex-direction: column;
   justify-content: center;
   min-height: calc(100vh - 110px);
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   gap: 1rem;
 `;
 

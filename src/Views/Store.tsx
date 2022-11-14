@@ -2,7 +2,6 @@ import Container from "../Styles/Container";
 import styled from "styled-components";
 import { ProductsAPIResponse } from "../Interface";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const StoreWrapper = styled(Container)`
   display: grid;
@@ -27,6 +26,9 @@ const StoreItemContainer = styled.li`
   text-align: center;
   align-self: stretch;
   border-radius: 8px;
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const CoverWrapper = styled.div`
@@ -35,14 +37,19 @@ const CoverWrapper = styled.div`
   border-radius: 8px;
 `;
 
-const AlbumCover = styled(motion.img)`
+const AlbumCover = styled.img`
   max-inline-size: 100%;
   block-size: auto;
   cursor: pointer;
 `;
 
-const StyledLink = styled(motion(Link))`
+const StyledLink = styled(Link)`
   display: flex;
+  transition: transform 0.2s;
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.15);
+  }
 `;
 
 const StoreView = (props: ProductsAPIResponse) => {
@@ -54,8 +61,8 @@ const StoreView = (props: ProductsAPIResponse) => {
             <StyledLink
               to={`/${data.title?.replaceAll(" ", "-")}`}
               aria-label={`Show details about the album ${data.title}`}
-              whileHover={{ scale: 1.15 }}
-              whileFocus={{ scale: 1.15 }}
+              //whileHover={{ scale: 1.15 }}
+              //whileFocus={{ scale: 1.15 }}
             >
               <AlbumCover
                 src={data.cover?.[0]}
