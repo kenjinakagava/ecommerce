@@ -6,12 +6,12 @@ import AlbumCover from "../../Styles/AlbumCover";
 
 const ProductWrapper = styled.div`
   display: flex;
-  gap: 1rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   @media (min-width: 768px) {
     flex-direction: row;
+    gap: 1rem;
   }
 `;
 
@@ -26,7 +26,12 @@ const ProductTitle = styled.h2`
   }
 `;
 
-const ProductDisplay = styled.div``;
+const ProductImageContainer = styled.div`
+  max-width: 250px;
+  @media (min-width: 768px) {
+    max-width: 400px;
+  }
+`;
 
 const ProductDisplayDescription = styled.div`
   max-width: 200px;
@@ -59,20 +64,19 @@ const StyledCTAButton = styled(CTAButton)`
 const ProductSwiperItem = (props: ProductsAPIResponse) => {
   const smallCover = props.cover?.[0];
   const mediumCover = props.cover?.[1];
-  const bigCover = props.cover?.[2];
 
   return (
     <ProductWrapper>
-      <ProductDisplay>
+      <ProductImageContainer>
         <AlbumCover
-          src={smallCover}
-          srcSet={`${smallCover} 300w, ${mediumCover} 600w, ${bigCover} 1200w`}
-          sizes="(min-width: 1024px) 40vw, (min-width: 768px) 25vw, 80vw"
+          src={mediumCover}
+          srcSet={`${smallCover} 250w, ${mediumCover} 400w`}
+          sizes="(min-width: 768px) 400px, 250px"
           alt={props.title}
-          width={300}
-          height={300}
+          width={400}
+          height={395}
         />
-      </ProductDisplay>
+      </ProductImageContainer>
       <ProductDisplayDescription>
         <ProductTitle>{props.title}</ProductTitle>
         <p>{props.shortDescription}</p>

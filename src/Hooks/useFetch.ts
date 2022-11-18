@@ -10,7 +10,7 @@ const useFetch = (url: string) => {
     fetch(url)
       .then((res) => {
         if (!res.ok) {
-          throw Error("Remember to run the server by typing npm run server!");
+          throw Error("There may be a problem with the api.");
         }
         return res.json();
       })

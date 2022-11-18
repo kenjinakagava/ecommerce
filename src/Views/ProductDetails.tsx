@@ -45,10 +45,10 @@ const ProductDetails = (props: ProductsAPIResponse) => {
       <ProductWrapper>
         <AlbumCover
           src={smallCover}
-          srcSet={`${smallCover} 300w, ${mediumCover} 600w, ${bigCover} 1200w`}
-          width={600}
-          height={600}
-          sizes="(min-width: 1024px) 66vw, 80vw"
+          srcSet={`${smallCover} 250w, ${mediumCover} 400w, ${bigCover} 679w`}
+          width={679}
+          height={671}
+          sizes="(min-width: 1024px) 679px, (min-width: 768px) 400px, 250px"
           alt={props.title}
         />
         <Details>

@@ -26,9 +26,6 @@ const StoreItemContainer = styled.li`
   text-align: center;
   align-self: stretch;
   border-radius: 8px;
-  @media (min-width: 768px) {
-    font-size: 1.5rem;
-  }
 `;
 
 const CoverWrapper = styled.div`
@@ -52,6 +49,18 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const ProductTitle = styled.h2`
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
+`;
+
+const ProductPrice = styled.h3`
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
 const StoreView = (props: ProductsAPIResponse) => {
   return (
     <StoreWrapper as="ul">
@@ -61,21 +70,19 @@ const StoreView = (props: ProductsAPIResponse) => {
             <StyledLink
               to={`/${data.title?.replaceAll(" ", "-")}`}
               aria-label={`Show details about the album ${data.title}`}
-              //whileHover={{ scale: 1.15 }}
-              //whileFocus={{ scale: 1.15 }}
             >
               <AlbumCover
-                src={data.cover?.[0]}
-                srcSet={`${data.cover?.[0]} 300w, ${data.cover?.[1]} 600w, ${data.cover?.[2]} 1200w`}
-                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 90vw"
+                src={data.cover?.[2]}
+                srcSet={`${data.cover?.[0]} 250w, ${data.cover?.[1]} 400w`}
+                sizes="(min-width: 768px) 400px, 250px"
                 alt={`Cover for the album ${data.title}`}
-                height={500}
-                width={500}
+                height={400}
+                width={395}
               />
             </StyledLink>
           </CoverWrapper>
-          <h2>{data.title}</h2>
-          <h3>${data.price}</h3>
+          <ProductTitle>{data.title}</ProductTitle>
+          <ProductPrice>${data.price}</ProductPrice>
         </StoreItemContainer>
       ))}
     </StoreWrapper>
