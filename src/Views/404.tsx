@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Container from "../Styles/Container";
+import Container from "../Components/Container";
 import CTAButton from "../Components/Buttons/CTAButton";
 
 const Container404 = styled(Container)`

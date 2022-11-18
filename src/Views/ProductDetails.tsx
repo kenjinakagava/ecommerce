@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import Container from "../Styles/Container";
+import Container from "../Components/Container";
 import { ProductsAPIResponse } from "../Interface/index";
 import CTAButton from "../Components/Buttons/CTAButton";
-import AlbumCover from "../Styles/AlbumCover";
-
+import AlbumCover from "../Components/AlbumCover";
+import ProductTitle from "../Components/ProductTitle";
+import ProductShortDescription from "../Components/ProductShortDescription";
 const ProductContainer = styled(Container)`
   padding: 1rem;
   min-height: calc(100vh - 110px);
@@ -27,12 +28,18 @@ const Details = styled.div`
   gap: 1rem;
 `;
 
-const ProductDescription = styled.p`
+const ProductDescription = styled(ProductShortDescription)`
   white-space: pre-line;
 `;
 
 const LargeCTAButton = styled(CTAButton)`
   width: 100%;
+`;
+
+const ProductPrice = styled.h3`
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const ProductDetails = (props: ProductsAPIResponse) => {
@@ -52,8 +59,8 @@ const ProductDetails = (props: ProductsAPIResponse) => {
           alt={props.title}
         />
         <Details>
-          <h2>{props.title}</h2>
-          <h3>{`$${props.price}`}</h3>
+          <ProductTitle>{props.title}</ProductTitle>
+          <ProductPrice>{`$${props.price}`}</ProductPrice>
           <ProductDescription>{props.description}</ProductDescription>
           <LargeCTAButton
             as={"a"}

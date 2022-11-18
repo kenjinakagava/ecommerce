@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { ProductsAPIResponse } from "../../Interface";
 import CTAButton from "../../Components/Buttons/CTAButton";
 import { Link } from "react-router-dom";
-import AlbumCover from "../../Styles/AlbumCover";
+import AlbumCover from "../../Components/AlbumCover";
+import ProductTitle from "../../Components/ProductTitle";
+import ProductShortDescription from "../../Components/ProductShortDescription";
 
 const ProductWrapper = styled.div`
   display: flex;
@@ -15,12 +17,8 @@ const ProductWrapper = styled.div`
   }
 `;
 
-const ProductTitle = styled.h2`
-  font-size: 1.3125rem;
+const SwiperItemProductTitle = styled(ProductTitle)`
   text-align: center;
-  @media (min-width: 300px) {
-    font-size: 1.5rem;
-  }
   @media (min-width: 768px) {
     text-align: left;
   }
@@ -78,8 +76,10 @@ const ProductSwiperItem = (props: ProductsAPIResponse) => {
         />
       </ProductImageContainer>
       <ProductDisplayDescription>
-        <ProductTitle>{props.title}</ProductTitle>
-        <p>{props.shortDescription}</p>
+        <SwiperItemProductTitle>{props.title}</SwiperItemProductTitle>
+        <ProductShortDescription>
+          {props.shortDescription}
+        </ProductShortDescription>
         <CTAButtonGroup>
           <StyledCTAButton
             as={"a"}

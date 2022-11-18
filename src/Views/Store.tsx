@@ -1,4 +1,4 @@
-import Container from "../Styles/Container";
+import Container from "../Components/Container";
 import styled from "styled-components";
 import { ProductsAPIResponse } from "../Interface";
 import { Link } from "react-router-dom";
