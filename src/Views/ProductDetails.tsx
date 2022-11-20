@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Container from "../Components/Container";
-import { ProductsAPIResponse } from "../Interface/index";
-import CTAButton from "../Components/Buttons/CTAButton";
-import AlbumCover from "../Components/AlbumCover";
-import ProductTitle from "../Components/ProductTitle";
-import ProductShortDescription from "../Components/ProductShortDescription";
+import Container from "../features/ui/ContainerStyles";
+import { ProductsAPIResponse } from "../types/index";
+import CTAButton from "../features/ui/CTAButton";
+import AlbumCover from "../features/products/AlbumCover";
+import ProductTitle from "../features/products/StylesProductTitle";
+import ProductShortDescription from "../features/products/StylesProductShortDescription";
 const ProductContainer = styled(Container)`
   padding: 1rem;
   min-height: calc(100vh - 110px);

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Container from "../Components/Container";
-import CTAButton from "../Components/Buttons/CTAButton";
+import Container from "../features/ui/ContainerStyles";
+import CTAButton from "../features/ui/CTAButton";
 
 const Container404 = styled(Container)`
   display: flex;

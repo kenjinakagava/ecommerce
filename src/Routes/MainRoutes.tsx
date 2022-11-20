@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import { ProductsAPIResponse } from "../Interface";
-import ProductsList from "../Views/Home/ProductsSwiper";
-import ProductDetails from "../Views/ProductDetails";
-import StoreView from "../Views/Store";
-import Page404 from "../Views/404";
+import { ProductsAPIResponse } from "../types";
+import ProductsList from "../features/carousel/Carousel";
+import ProductDetails from "../views/ProductDetails";
+import StoreView from "../views/Store";
+import Page404 from "../views/404";
 
 const MainRoutes = (props: ProductsAPIResponse) => {
   return (

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { ProductsAPIResponse } from "../Interface";
 
-const useFetch = (url: string) => {
-  const [data, setData] = useState<Array<ProductsAPIResponse> | null>(null);
+// Generic Typing for reusability
+const useFetch = <T>(url: string) => {
+  const [data, setData] = useState<T[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 

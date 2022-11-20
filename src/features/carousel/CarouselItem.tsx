@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { ProductsAPIResponse } from "../../Interface";
-import CTAButton from "../../Components/Buttons/CTAButton";
+import { ProductsAPIResponse } from "../../types";
+import CTAButton from "../ui/CTAButton";
 import { Link } from "react-router-dom";
-import AlbumCover from "../../Components/AlbumCover";
-import ProductTitle from "../../Components/ProductTitle";
-import ProductShortDescription from "../../Components/ProductShortDescription";
+import AlbumCover from "../products/AlbumCover";
+import ProductTitle from "../products/StylesProductTitle";
+import ProductShortDescription from "../products/StylesProductShortDescription";
 
 const ProductWrapper = styled.div`
   display: flex;

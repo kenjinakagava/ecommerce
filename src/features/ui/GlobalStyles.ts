@@ -20,6 +20,10 @@ const GlobalStyles = createGlobalStyle`
     a:focus-visible, button:focus-visible {
         outline: 2px solid #5e361e;
     }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 `;
 
 export default GlobalStyles;

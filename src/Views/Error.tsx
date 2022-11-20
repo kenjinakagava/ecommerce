@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Container from "../Components/Container";
+import Container from "../features/ui/ContainerStyles";
 
 const ErrorContainer = styled(Container)`
   display: flex;

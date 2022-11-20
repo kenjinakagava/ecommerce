@@ -1,6 +1,6 @@
-import Container from "../Components/Container";
+import Container from "../features/ui/ContainerStyles";
 import styled from "styled-components";
-import { ProductsAPIResponse } from "../Interface";
+import { ProductsAPIResponse } from "../types";
 import { Link } from "react-router-dom";
 
 const StoreWrapper = styled(Container)`

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Nav from "../Components/Nav";
+import Nav from "./Nav";
 
 const HeaderContainer = styled.header`
   background: white;
