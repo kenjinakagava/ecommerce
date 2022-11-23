@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import Container from "../features/ui/ContainerStyles";
+import Container from "../features/ui/Styles/Container";
 
-const ErrorContainer = styled(Container)`
+const ErrorContainer = styled.div`
+  ${Container}
   display: flex;
   flex-direction: column;
   justify-content: center;

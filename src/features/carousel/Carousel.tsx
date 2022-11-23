@@ -1,6 +1,6 @@
 import ProductSwiperItem from "./CarouselItem";
 import styled from "styled-components";
-import { ProductsAPIResponse } from "../../types";
+import ProductsAPIResponse from "../products/TypesProduct";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Keyboard, A11y } from "swiper";
 import "swiper/css";

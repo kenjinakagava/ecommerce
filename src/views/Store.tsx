@@ -1,9 +1,12 @@
-import Container from "../features/ui/ContainerStyles";
+import Container from "../features/ui/Styles/Container";
 import styled from "styled-components";
-import { ProductsAPIResponse } from "../types";
+import ProductsAPIResponse from "../features/products/TypesProduct";
 import { Link } from "react-router-dom";
+import AlbumCover from "../features/products/StylesAlbumCover";
+import CategoriesNav from "../features/categories/CategoriesNav";
 
-const StoreWrapper = styled(Container)`
+const StoreWrapper = styled.div`
+  ${Container}
   display: grid;
   gap: 3rem;
   margin: 0 auto;
@@ -34,9 +37,7 @@ const CoverWrapper = styled.div`
   border-radius: 8px;
 `;
 
-const AlbumCover = styled.img`
-  max-inline-size: 100%;
-  block-size: auto;
+const StoreAlbumCover = styled(AlbumCover)`
   cursor: pointer;
 `;
 
@@ -62,30 +63,38 @@ const ProductPrice = styled.h3`
 `;
 
 const StoreView = (props: ProductsAPIResponse) => {
+  const categoryArray: Array<string> = [];
+  props.data?.map((data) =>
+    categoryArray.push(data.category !== undefined ? data.category : "")
+  );
+  const uniqueCategories = [...new Set(categoryArray)];
   return (
-    <StoreWrapper as="ul">
-      {props.data?.map((data) => (
-        <StoreItemContainer key={data.id}>
-          <CoverWrapper>
-            <StyledLink
-              to={`/${data.title?.replaceAll(" ", "-")}`}
-              aria-label={`Show details about the album ${data.title}`}
-            >
-              <AlbumCover
-                src={data.cover?.[2]}
-                srcSet={`${data.cover?.[0]} 250w, ${data.cover?.[1]} 400w`}
-                sizes="(min-width: 768px) 400px, 250px"
-                alt={`Cover for the album ${data.title}`}
-                height={400}
-                width={395}
-              />
-            </StyledLink>
-          </CoverWrapper>
-          <ProductTitle>{data.title}</ProductTitle>
-          <ProductPrice>${data.price}</ProductPrice>
-        </StoreItemContainer>
-      ))}
-    </StoreWrapper>
+    <>
+      <CategoriesNav categories={uniqueCategories}></CategoriesNav>
+      <StoreWrapper as="ul">
+        {props.data?.map((data) => (
+          <StoreItemContainer key={data.id}>
+            <CoverWrapper>
+              <StyledLink
+                to={`/${data.title?.replaceAll(" ", "-")}`}
+                aria-label={`Show details about the album ${data.title}`}
+              >
+                <StoreAlbumCover
+                  src={data.cover?.[2]}
+                  srcSet={`${data.cover?.[0]} 250w, ${data.cover?.[1]} 400w`}
+                  sizes="(min-width: 768px) 400px, 250px"
+                  alt={`Cover for the album ${data.title}`}
+                  height={400}
+                  width={395}
+                />
+              </StyledLink>
+            </CoverWrapper>
+            <ProductTitle>{data.title}</ProductTitle>
+            <ProductPrice>${data.price}</ProductPrice>
+          </StoreItemContainer>
+        ))}
+      </StoreWrapper>
+    </>
   );
 };
 

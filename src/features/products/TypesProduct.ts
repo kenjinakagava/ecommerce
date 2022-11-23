@@ -1,4 +1,4 @@
-export type ProductsAPIResponse = {
+type ProductsAPIResponse = {
   id?: number;
   title?: string;
   cover?: Array<string>;
@@ -7,5 +7,8 @@ export type ProductsAPIResponse = {
   price?: number;
   featured?: boolean;
   paymentLink?: string;
+  category?: string;
   data?: Array<ProductsAPIResponse> | null;
 };
+
+export default ProductsAPIResponse;

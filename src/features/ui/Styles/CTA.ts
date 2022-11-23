@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import { css } from "styled-components";
 
-const CTAButton = styled.button`
+const CTA = css`
   border: 1px solid black;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 0.875rem;
   border-radius: 6px;
   padding: 10px;
   background: #f7fafc;
@@ -11,4 +11,4 @@ const CTAButton = styled.button`
   cursor: pointer;
 `;
 
-export default CTAButton;
+export default CTA;

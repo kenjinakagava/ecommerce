@@ -1,25 +1,25 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Container from "./Styles/Container";
 
 const Wrapper = styled.div`
+  ${Container}
   display: flex;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
 `;
 
-const NavWrapper = styled(Wrapper)`
+const NavWrapper = styled.nav`
+  ${Container}
   justify-content: space-between;
+  display: flex;
+  align-items: center;
 `;
 
 const StoreBrand = styled.h1`
-  width: min-content;
   font-family: "Times New Roman", sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-left: 1rem;
 `;
-
-// width: min-content improves the site usability on small screens, before applying this style
 
 const AnimatedSvg = styled.svg`
   animation: animate-spin 6s infinite linear;
@@ -44,7 +44,7 @@ const NavList = styled.ul`
 
 const Nav = () => {
   return (
-    <NavWrapper as="nav">
+    <NavWrapper>
       <Link to="/" aria-label="go to homepage">
         <Wrapper>
           <AnimatedSvg width="48" height="48" viewBox="0 0 24 24">

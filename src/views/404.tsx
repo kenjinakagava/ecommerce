@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Container from "../features/ui/ContainerStyles";
-import CTAButton from "../features/ui/CTAButton";
+import Container from "../features/ui/Styles/Container";
+import CTAButton from "../features/ui/Styles/CTA";
 
-const Container404 = styled(Container)`
+const Container404 = styled.div`
+  ${Container}
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +22,8 @@ const Message = styled.p`
   font-size: clamp(1.25rem, 10vw, 1.75rem);
 `;
 
-const BackButton = styled(CTAButton)`
+const BackButton = styled(Link)`
+  ${Container}
   font-size: clamp(1.25rem, 10vw, 1.75rem);
 `;
 
@@ -31,9 +33,7 @@ const Page404 = () => {
       <MainText>404</MainText>
       <MainText>Page not found!</MainText>
       <Message>Sorry, we couldn't find the page you were looking for</Message>
-      <BackButton as={Link} to="/">
-        Click here to go back
-      </BackButton>
+      <BackButton to="/">Click here to go back</BackButton>
     </Container404>
   );
 };

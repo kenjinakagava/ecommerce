@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { ProductsAPIResponse } from "../../types";
-import CTAButton from "../ui/CTAButton";
+import ProductsAPIResponse from "../products/TypesProduct";
+import CTA from "../ui/Styles/CTA";
 import { Link } from "react-router-dom";
-import AlbumCover from "../products/AlbumCover";
+import AlbumCover from "../products/StylesAlbumCover";
 import ProductTitle from "../products/StylesProductTitle";
 import ProductShortDescription from "../products/StylesProductShortDescription";
 
@@ -53,7 +53,8 @@ const CTAButtonGroup = styled.div`
   }
 `;
 
-const StyledCTAButton = styled(CTAButton)`
+const StyledCTAButton = styled.button`
+  ${CTA}
   @media (min-width: 320px) {
     width: 45%;
   }

@@ -1,12 +1,16 @@
 import styled from "styled-components";
 import Nav from "./Nav";
+import StylesTopWrapper from "./Styles/StylesTopWrapper";
 
 const HeaderContainer = styled.header`
-  background: white;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  ${StylesTopWrapper}
   color: #0a2540;
-  padding: 10px 0;
+  position: relative;
+  z-index: 1;
 `;
+// z-index so the box-shadow doesn't get overlapped by the category nav in the store view
+// position: relative so z-index works without taking the element out of the normal flow
+// https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow
 
 const Header = () => {
   return (

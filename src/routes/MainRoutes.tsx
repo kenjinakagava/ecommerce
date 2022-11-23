@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { ProductsAPIResponse } from "../types";
+import ProductsAPIResponse from "../features/products/TypesProduct";
 import ProductsList from "../features/carousel/Carousel";
 import ProductDetails from "../views/ProductDetails";
 import StoreView from "../views/Store";
@@ -10,7 +10,6 @@ const MainRoutes = (props: ProductsAPIResponse) => {
     <Routes>
       <Route path="/" element={<ProductsList data={props.data} />} />
       <Route path="/store" element={<StoreView data={props.data} />} />
-      <Route path="/test" element={<ProductDetails data={props.data} />} />
       <Route path="*" element={<Page404 />} />
       {props.data?.map((data) => (
         <Route
@@ -18,11 +17,9 @@ const MainRoutes = (props: ProductsAPIResponse) => {
           path={data.title?.replaceAll(" ", "-")}
           element={
             <ProductDetails
-              title={data.title !== undefined ? data.title : ""}
-              description={
-                data.description !== undefined ? data.description : ""
-              }
-              cover={data.cover !== undefined ? data.cover : [""]}
+              title={data.title}
+              description={data.description}
+              cover={data.cover}
               price={data.price}
               paymentLink={data.paymentLink}
             />

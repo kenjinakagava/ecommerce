@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import Container from "../features/ui/ContainerStyles";
-import { ProductsAPIResponse } from "../types/index";
-import CTAButton from "../features/ui/CTAButton";
-import AlbumCover from "../features/products/AlbumCover";
+import Container from "../features/ui/Styles/Container";
+import ProductsAPIResponse from "../features/products/TypesProduct";
+import CTA from "../features/ui/Styles/CTA";
+import AlbumCover from "../features/products/StylesAlbumCover";
 import ProductTitle from "../features/products/StylesProductTitle";
 import ProductShortDescription from "../features/products/StylesProductShortDescription";
-const ProductContainer = styled(Container)`
+const ProductContainer = styled.div`
+  ${Container}
   padding: 1rem;
   min-height: calc(100vh - 110px);
 `;
@@ -15,8 +16,10 @@ const ProductWrapper = styled.div`
   flex-direction: column;
   gap: 2rem;
   width: 100%;
+  align-items: center;
   @media (min-width: 1024px) {
     flex-direction: row;
+    align-items: flex-start;
   }
 `;
 
@@ -26,13 +29,15 @@ const Details = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 50%:
 `;
 
 const ProductDescription = styled(ProductShortDescription)`
   white-space: pre-line;
 `;
 
-const LargeCTAButton = styled(CTAButton)`
+const LargeCTAButton = styled.button`
+  ${CTA}
   width: 100%;
 `;
 
@@ -55,7 +60,7 @@ const ProductDetails = (props: ProductsAPIResponse) => {
           srcSet={`${smallCover} 250w, ${mediumCover} 400w, ${bigCover} 679w`}
           width={679}
           height={671}
-          sizes="(min-width: 1024px) 679px, (min-width: 768px) 400px, 250px"
+          sizes="(min-width: 1200px) 679px, (min-width: 768px) 400px, 250px"
           alt={props.title}
         />
         <Details>
