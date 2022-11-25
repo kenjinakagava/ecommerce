@@ -2,9 +2,11 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Container from "../ui/Styles/Container";
 import StylesTopWrapper from "../ui/Styles/StylesTopWrapper";
-type testType = {
+
+interface testType {
   categories: Array<string>;
-};
+  id: number;
+}
 
 const StyledCategoryNav = styled.nav`
   ${StylesTopWrapper}
@@ -21,13 +23,15 @@ const ListWrapper = styled.ul`
   text-transform: capitalize;
 `;
 
-const CategoriesNav = ({ categories }: testType) => {
+const CategoriesNav = ({ categories, id }: testType) => {
   return (
     <StyledCategoryNav>
       <ListWrapper>
         {categories.map((categorie) => (
-          <li>
-            <Link to={categorie.replaceAll(" ", "-")}>{categorie}</Link>
+          <li key={id}>
+            <Link to={`/store/${categorie.replaceAll(" ", "-")}`}>
+              {categorie}
+            </Link>
           </li>
         ))}
       </ListWrapper>

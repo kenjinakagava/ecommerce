@@ -63,38 +63,30 @@ const ProductPrice = styled.h3`
 `;
 
 const Store = (props: ProductsAPIResponse) => {
-  const categoryArray: Array<string> = [];
-  props.data?.map((data) =>
-    categoryArray.push(data.category !== undefined ? data.category : "")
-  );
-  const uniqueCategories = [...new Set(categoryArray)];
   return (
-    <>
-      <CategoriesNav categories={uniqueCategories} />
-      <StoreWrapper as="ul">
-        {props.data?.map((data) => (
-          <StoreProduct key={data.id}>
-            <CoverWrapper>
-              <StyledLink
-                to={`/${data.title?.replaceAll(" ", "-")}`}
-                aria-label={`See details about the album ${data.title}`}
-              >
-                <StoreAlbumCover
-                  src={data.cover?.[2]}
-                  srcSet={`${data.cover?.[0]} 250w, ${data.cover?.[1]} 400w`}
-                  sizes="(min-width: 768px) 400px, 250px"
-                  alt={`Cover for the album ${data.title}`}
-                  height={400}
-                  width={395}
-                />
-              </StyledLink>
-            </CoverWrapper>
-            <ProductTitle>{data.title}</ProductTitle>
-            <ProductPrice>${data.price}</ProductPrice>
-          </StoreProduct>
-        ))}
-      </StoreWrapper>
-    </>
+    <StoreWrapper as="ul">
+      {props.data?.map((data) => (
+        <StoreProduct key={data.id}>
+          <CoverWrapper>
+            <StyledLink
+              to={`/${data.title?.replaceAll(" ", "-")}`}
+              aria-label={`See details about the album ${data.title}`}
+            >
+              <StoreAlbumCover
+                src={data.cover?.[2]}
+                srcSet={`${data.cover?.[0]} 250w, ${data.cover?.[1]} 400w`}
+                sizes="(min-width: 768px) 400px, 250px"
+                alt={`Cover for the album ${data.title}`}
+                height={400}
+                width={395}
+              />
+            </StyledLink>
+          </CoverWrapper>
+          <ProductTitle>{data.title}</ProductTitle>
+          <ProductPrice>${data.price}</ProductPrice>
+        </StoreProduct>
+      ))}
+    </StoreWrapper>
   );
 };
 

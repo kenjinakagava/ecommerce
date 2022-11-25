@@ -9,6 +9,7 @@ import ProductDetails from "./views/ProductDetails";
 import Carousel from "./features/carousel/Carousel";
 import Store from "./views/Store";
 import Page404 from "./views/404";
+import CategoriesNav from "./features/categories/CategoriesNav";
 
 function App() {
   const { apiRes, isLoading, error } = useFetch<ProductsAPIResponse>(
@@ -19,13 +20,26 @@ function App() {
     console.log(error);
     return <Error />;
   }
+  const categories = apiRes?.map((data) =>
+    data.category !== undefined ? data.category : ""
+  );
+  const uniqueCategories = [...new Set(categories)];
+  console.log(uniqueCategories);
   return (
     <Router>
       <Header />
       <main>
         <Routes>
           <Route path="/" element={<Carousel data={apiRes} />} />
-          <Route path="/store" element={<Store data={apiRes} />} />
+          <Route
+            path="/store"
+            element={
+              <>
+                <CategoriesNav id={1} categories={uniqueCategories} />
+                <Store data={apiRes} />
+              </>
+            }
+          />
           <Route path="*" element={<Page404 />} />
           {apiRes?.map((data) => (
             <Route
@@ -47,11 +61,17 @@ function App() {
               key={data.id}
               path={`/store/${data.category}`}
               element={
-                <Store
-                  data={apiRes.filter(
-                    (categoryData) => categoryData.category === data.category
-                  )}
-                />
+                <>
+                  <CategoriesNav
+                    id={1}
+                    categories={["anime", "rock", "jazz"]}
+                  />
+                  <Store
+                    data={apiRes.filter(
+                      (categoryData) => categoryData.category === data.category
+                    )}
+                  />
+                </>
               }
             />
           ))}
@@ -63,3 +83,5 @@ function App() {
 }
 
 export default App;
+
+// They are all being pushed in a big string when i use map like that.
