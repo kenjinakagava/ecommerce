@@ -1,4 +1,4 @@
-import ProductSwiperItem from "./CarouselItem";
+import CarouselItem from "./CarouselItem";
 import styled from "styled-components";
 import ProductsAPIResponse from "../products/TypesProduct";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/a11y";
 import "swiper/css/pagination";
 
-const StyledSwiper = styled(Swiper)`
+const StyledCarousel = styled(Swiper)`
   --swiper-theme-color: #222;
   display: flex;
   align-items: center;
@@ -19,14 +19,14 @@ const StyledSwiper = styled(Swiper)`
   }
 `;
 
-const StyledSwiperSlide = styled(SwiperSlide)`
+const CarouselSlide = styled(SwiperSlide)`
   display: flex;
   justify-content: center;
 `;
 
-const ProductsSwiper = (props: ProductsAPIResponse) => {
+const Carousel = (props: ProductsAPIResponse) => {
   return (
-    <StyledSwiper
+    <StyledCarousel
       modules={[Navigation, Keyboard, A11y]}
       spaceBetween={50}
       slidesPerView={1}
@@ -40,18 +40,18 @@ const ProductsSwiper = (props: ProductsAPIResponse) => {
     >
       {props.data?.map((data) =>
         data.featured ? (
-          <StyledSwiperSlide key={data.id}>
-            <ProductSwiperItem
+          <CarouselSlide key={data.id}>
+            <CarouselItem
               title={data.title}
               cover={data.cover}
               shortDescription={data.shortDescription}
               paymentLink={data.paymentLink}
-            ></ProductSwiperItem>
-          </StyledSwiperSlide>
+            />
+          </CarouselSlide>
         ) : null
       )}
-    </StyledSwiper>
+    </StyledCarousel>
   );
 };
 
-export default ProductsSwiper;
+export default Carousel;

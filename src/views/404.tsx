@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Container from "../features/ui/Styles/Container";
-import CTAButton from "../features/ui/Styles/CTA";
 
 const Container404 = styled.div`
   ${Container}

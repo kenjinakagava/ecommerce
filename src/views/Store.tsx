@@ -23,7 +23,7 @@ const StoreWrapper = styled.div`
   }
 `;
 
-const StoreItemContainer = styled.li`
+const StoreProduct = styled.li`
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -62,7 +62,7 @@ const ProductPrice = styled.h3`
   }
 `;
 
-const StoreView = (props: ProductsAPIResponse) => {
+const Store = (props: ProductsAPIResponse) => {
   const categoryArray: Array<string> = [];
   props.data?.map((data) =>
     categoryArray.push(data.category !== undefined ? data.category : "")
@@ -70,14 +70,14 @@ const StoreView = (props: ProductsAPIResponse) => {
   const uniqueCategories = [...new Set(categoryArray)];
   return (
     <>
-      <CategoriesNav categories={uniqueCategories}></CategoriesNav>
+      <CategoriesNav categories={uniqueCategories} />
       <StoreWrapper as="ul">
         {props.data?.map((data) => (
-          <StoreItemContainer key={data.id}>
+          <StoreProduct key={data.id}>
             <CoverWrapper>
               <StyledLink
                 to={`/${data.title?.replaceAll(" ", "-")}`}
-                aria-label={`Show details about the album ${data.title}`}
+                aria-label={`See details about the album ${data.title}`}
               >
                 <StoreAlbumCover
                   src={data.cover?.[2]}
@@ -91,11 +91,11 @@ const StoreView = (props: ProductsAPIResponse) => {
             </CoverWrapper>
             <ProductTitle>{data.title}</ProductTitle>
             <ProductPrice>${data.price}</ProductPrice>
-          </StoreItemContainer>
+          </StoreProduct>
         ))}
       </StoreWrapper>
     </>
   );
 };
 
-export default StoreView;
+export default Store;

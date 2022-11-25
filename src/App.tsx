@@ -1,16 +1,17 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import useFetch from "./hooks/useFetch";
 import Header from "./features/ui/Header";
 import Footer from "./features/ui/Footer";
-import { BrowserRouter as Router } from "react-router-dom";
-import useFetch from "./hooks/useFetch";
-import MainRoutes from "./routes/MainRoutes";
+import ProductsAPIResponse from "./features/products/TypesProduct";
 import Loading from "./views/Loading";
 import Error from "./views/Error";
-import ProductsAPIResponse from "./features/products/TypesProduct";
-
-// implement blurhash later using isLoading, even if the loading is really quick i want to see how it works
+import ProductDetails from "./views/ProductDetails";
+import Carousel from "./features/carousel/Carousel";
+import Store from "./views/Store";
+import Page404 from "./views/404";
 
 function App() {
-  const { data, isLoading, error } = useFetch<ProductsAPIResponse>(
+  const { apiRes, isLoading, error } = useFetch<ProductsAPIResponse>(
     "https://kenjinakagava.github.io/ecommerce-api/albums.json"
   );
   if (isLoading === true) return <Loading />;
@@ -22,7 +23,39 @@ function App() {
     <Router>
       <Header />
       <main>
-        <MainRoutes data={data} />
+        <Routes>
+          <Route path="/" element={<Carousel data={apiRes} />} />
+          <Route path="/store" element={<Store data={apiRes} />} />
+          <Route path="*" element={<Page404 />} />
+          {apiRes?.map((data) => (
+            <Route
+              key={data.id}
+              path={data.title?.replaceAll(" ", "-")}
+              element={
+                <ProductDetails
+                  title={data.title}
+                  description={data.description}
+                  cover={data.cover}
+                  price={data.price}
+                  paymentLink={data.paymentLink}
+                />
+              }
+            />
+          ))}
+          {apiRes?.map((data) => (
+            <Route
+              key={data.id}
+              path={`/store/${data.category}`}
+              element={
+                <Store
+                  data={apiRes.filter(
+                    (categoryData) => categoryData.category === data.category
+                  )}
+                />
+              }
+            />
+          ))}
+        </Routes>
       </main>
       <Footer />
     </Router>

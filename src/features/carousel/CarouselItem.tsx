@@ -60,7 +60,7 @@ const StyledCTAButton = styled.button`
   }
 `;
 
-const ProductSwiperItem = (props: ProductsAPIResponse) => {
+const CarouselItem = (props: ProductsAPIResponse) => {
   const smallCover = props.cover?.[0];
   const mediumCover = props.cover?.[1];
 
@@ -104,4 +104,4 @@ const ProductSwiperItem = (props: ProductsAPIResponse) => {
   );
 };
 
-export default ProductSwiperItem;
+export default CarouselItem;
