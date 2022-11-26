@@ -72,8 +72,8 @@ const CarouselItem = (props: ProductsAPIResponse) => {
           srcSet={`${smallCover} 250w, ${mediumCover} 400w`}
           sizes="(min-width: 768px) 400px, 250px"
           alt={props.title}
-          width={400}
-          height={395}
+          width={"400"}
+          height={"395"}
         />
       </ProductImageContainer>
       <ProductDisplayDescription>

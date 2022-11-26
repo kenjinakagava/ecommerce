@@ -3,7 +3,6 @@ import styled from "styled-components";
 import ProductsAPIResponse from "../features/products/TypesProduct";
 import { Link } from "react-router-dom";
 import AlbumCover from "../features/products/StylesAlbumCover";
-import CategoriesNav from "../features/categories/CategoriesNav";
 
 const StoreWrapper = styled.div`
   ${Container}
@@ -77,8 +76,8 @@ const Store = (props: ProductsAPIResponse) => {
                 srcSet={`${data.cover?.[0]} 250w, ${data.cover?.[1]} 400w`}
                 sizes="(min-width: 768px) 400px, 250px"
                 alt={`Cover for the album ${data.title}`}
-                height={400}
-                width={395}
+                height={"400"}
+                width={"395"}
               />
             </StyledLink>
           </CoverWrapper>

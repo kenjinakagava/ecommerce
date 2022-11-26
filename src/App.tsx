@@ -24,7 +24,6 @@ function App() {
     data.category !== undefined ? data.category : ""
   );
   const uniqueCategories = [...new Set(categories)];
-  console.log(uniqueCategories);
   return (
     <Router>
       <Header />
@@ -35,7 +34,7 @@ function App() {
             path="/store"
             element={
               <>
-                <CategoriesNav id={1} categories={uniqueCategories} />
+                <CategoriesNav categories={uniqueCategories} />
                 <Store data={apiRes} />
               </>
             }
@@ -59,13 +58,10 @@ function App() {
           {apiRes?.map((data) => (
             <Route
               key={data.id}
-              path={`/store/${data.category}`}
+              path={`/store/${data.category?.replaceAll(" ", "-")}`}
               element={
                 <>
-                  <CategoriesNav
-                    id={1}
-                    categories={["anime", "rock", "jazz"]}
-                  />
+                  <CategoriesNav categories={uniqueCategories} />
                   <Store
                     data={apiRes.filter(
                       (categoryData) => categoryData.category === data.category
@@ -83,5 +79,3 @@ function App() {
 }
 
 export default App;
-
-// They are all being pushed in a big string when i use map like that.
