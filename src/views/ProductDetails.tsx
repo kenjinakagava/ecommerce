@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Container from "../features/ui/Styles/Container";
+import Container from "../features/ui/styles/Container";
 import ProductsAPIResponse from "../features/products/TypesProduct";
-import CTA from "../features/ui/Styles/CTA";
+import CTA from "../features/ui/styles/CTA";
 import AlbumCover from "../features/products/StylesAlbumCover";
 import ProductTitle from "../features/products/StylesProductTitle";
 import ProductShortDescription from "../features/products/StylesProductShortDescription";
@@ -25,6 +25,15 @@ const ProductWrapper = styled.div`
 
 // 1024 so the layout doesn't break on tablets
 
+const CTAButton = styled.button`
+  ${CTA};
+`;
+
+const ButtonGroup = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
 const Details = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,11 +43,6 @@ const Details = styled.div`
 
 const ProductDescription = styled(ProductShortDescription)`
   white-space: pre-line;
-`;
-
-const LargeCTAButton = styled.button`
-  ${CTA}
-  width: 100%;
 `;
 
 const ProductPrice = styled.h3`
@@ -67,14 +71,17 @@ const ProductDetails = (props: ProductsAPIResponse) => {
           <ProductTitle>{props.title}</ProductTitle>
           <ProductPrice>{`$${props.price}`}</ProductPrice>
           <ProductDescription>{props.description}</ProductDescription>
-          <LargeCTAButton
-            as={"a"}
-            href={props.paymentLink}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Buy Now
-          </LargeCTAButton>
+          <ButtonGroup>
+            <CTAButton as={"button"}>Add to Cart</CTAButton>
+            <CTAButton
+              as={"a"}
+              href={props.paymentLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Buy Now
+            </CTAButton>
+          </ButtonGroup>
         </Details>
       </ProductWrapper>
     </ProductContainer>

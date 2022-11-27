@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import useFetch from "./hooks/useFetch";
+import Carousel from "./features/carousel/Carousel";
+import CategoriesNav from "./features/categories/CategoriesNav";
 import Header from "./features/ui/Header";
 import Footer from "./features/ui/Footer";
 import ProductsAPIResponse from "./features/products/TypesProduct";
 import Loading from "./views/Loading";
 import Error from "./views/Error";
 import ProductDetails from "./views/ProductDetails";
-import Carousel from "./features/carousel/Carousel";
 import Store from "./views/Store";
 import Page404 from "./views/404";
-import CategoriesNav from "./features/categories/CategoriesNav";
 
 function App() {
   const { apiRes, isLoading, error } = useFetch<ProductsAPIResponse>(

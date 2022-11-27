@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ProductsAPIResponse from "../products/TypesProduct";
-import CTA from "../ui/Styles/CTA";
+import CTA from "../ui/styles/CTA";
 import { Link } from "react-router-dom";
 import AlbumCover from "../products/StylesAlbumCover";
 import ProductTitle from "../products/StylesProductTitle";
@@ -32,7 +32,7 @@ const ProductImageContainer = styled.div`
 `;
 
 const ProductDisplayDescription = styled.div`
-  max-width: 200px;
+  max-width: 230px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -83,18 +83,17 @@ const CarouselItem = (props: ProductsAPIResponse) => {
         </ProductShortDescription>
         <CTAButtonGroup>
           <StyledCTAButton
-            as={"a"}
-            href={props.paymentLink}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={`Buy the album ${props.title}`}
+            as={"button"}
+            aria-label={`Add the album ${props.title} to the cart`}
+            // aria-label here so the client knows what he's adding to the cart
           >
-            Buy Now
+            Add to Cart
           </StyledCTAButton>
           <StyledCTAButton
             as={Link}
             to={`/${props.title?.replaceAll(" ", "-")}`}
-            aria-label={`Learn more about the album ${props.title}`}
+            aria-label={`View details about the album ${props.title}`}
+            // aria-label here so the client knows which product he's going to see the details of
           >
             View Details
           </StyledCTAButton>

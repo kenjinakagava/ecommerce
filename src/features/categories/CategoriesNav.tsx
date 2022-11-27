@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import Container from "../ui/Styles/Container";
-import StylesTopWrapper from "../ui/Styles/StylesTopWrapper";
+import { NavLink } from "react-router-dom";
+import Container from "../ui/styles/Container";
+import StylesTopWrapper from "../ui/styles/StylesTopWrapper";
 
 interface testType {
   categories: Array<string>;
@@ -16,6 +16,9 @@ const ListWrapper = styled.ul`
   display: flex;
   gap: 1rem;
   text-transform: capitalize;
+  .active {
+    border-bottom: 3px solid black;
+  }
 `;
 
 const CategoriesNav = ({ categories }: testType) => {
@@ -23,13 +26,15 @@ const CategoriesNav = ({ categories }: testType) => {
     <StyledCategoryNav>
       <ListWrapper>
         <li>
-          <Link to={"/store"}>All</Link>
+          <NavLink to={"/store"} end>
+            All
+          </NavLink>
         </li>
         {categories.map((categorie) => (
           <li key={categorie}>
-            <Link to={`/store/${categorie.replaceAll(" ", "-")}`}>
+            <NavLink to={`/store/${categorie.replaceAll(" ", "-")}`}>
               {categorie}
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ListWrapper>

@@ -1,5 +1,5 @@
 type ProductsAPIResponse = {
-  id?: number;
+  id?: number | string;
   title?: string;
   cover?: Array<string>;
   shortDescription?: string;
