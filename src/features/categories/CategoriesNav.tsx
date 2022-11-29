@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import Container from "../ui/stylesa/Container";
-import StylesTopWrapper from "../ui/stylesa/StylesTopWrapper";
+import Container from "../ui/styles/Container";
+import StylesTopWrapper from "../ui/styles/StylesTopWrapper";
 
 interface testType {
   categories: Array<string>;
