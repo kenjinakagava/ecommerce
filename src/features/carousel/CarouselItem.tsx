@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ProductsAPIResponse from "../products/TypesProduct";
-import CTA from "../ui/styles/CTA";
+import CTA from "../ui/stylesa/CTA";
 import { Link } from "react-router-dom";
 import AlbumCover from "../products/StylesAlbumCover";
 import ProductTitle from "../products/StylesProductTitle";

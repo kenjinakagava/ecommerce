@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Container from "../features/ui/styles/Container";
+import Container from "../features/ui/stylesa/Container";
 
 const ErrorContainer = styled.div`
   ${Container}

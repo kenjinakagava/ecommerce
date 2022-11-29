@@ -1,4 +1,4 @@
-import Container from "../features/ui/styles/Container";
+import Container from "../features/ui/stylesa/Container";
 import styled from "styled-components";
 import ProductsAPIResponse from "../features/products/TypesProduct";
 import { Link } from "react-router-dom";

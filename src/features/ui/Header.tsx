@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Nav from "./Nav";
-import StylesTopWrapper from "./styles/StylesTopWrapper";
+import StylesTopWrapper from "./stylesa/StylesTopWrapper";
 
 const HeaderContainer = styled.header`
   ${StylesTopWrapper}
