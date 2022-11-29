@@ -16,6 +16,7 @@ const ListWrapper = styled.ul`
   display: flex;
   gap: 1rem;
   text-transform: capitalize;
+  flex-wrap: wrap;
   .active {
     border-bottom: 3px solid black;
   }

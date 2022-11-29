@@ -1,14 +1,18 @@
 type ProductsAPIResponse = {
-  id?: number | string;
+  id?: number;
   title?: string;
-  cover?: Array<string>;
+  cover?: {
+    small: string;
+    medium: string;
+    large: string;
+  };
   shortDescription?: string;
   description?: string;
   price?: number;
   featured?: boolean;
   paymentLink?: string;
   category?: string;
-  data?: Array<ProductsAPIResponse> | null;
+  data?: ProductsAPIResponse[] | null;
 };
 
 export default ProductsAPIResponse;

@@ -10,7 +10,6 @@ import Error from "./views/Error";
 import ProductDetails from "./views/ProductDetails";
 import Store from "./views/Store";
 import Page404 from "./views/404";
-
 function App() {
   const { apiRes, isLoading, error } = useFetch<ProductsAPIResponse>(
     "https://kenjinakagava.github.io/ecommerce-api/albums.json"

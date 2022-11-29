@@ -29,16 +29,12 @@ const CTAButton = styled.button`
   ${CTA};
 `;
 
-const ButtonGroup = styled.div`
-  display: flex;
-  gap: 1rem;
-`;
-
 const Details = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 50%:
+  width: 50%;
+  flex: 1;
 `;
 
 const ProductDescription = styled(ProductShortDescription)`
@@ -52,36 +48,33 @@ const ProductPrice = styled.h3`
 `;
 
 const ProductDetails = (props: ProductsAPIResponse) => {
-  const smallCover = props.cover?.[0];
-  const mediumCover = props.cover?.[1];
-  const bigCover = props.cover?.[2];
-
   return (
     <ProductContainer>
       <ProductWrapper>
-        <AlbumCover
-          src={smallCover}
-          srcSet={`${smallCover} 250w, ${mediumCover} 400w, ${bigCover} 679w`}
-          width={"679"}
-          height={"671"}
-          sizes="(min-width: 1200px) 679px, (min-width: 768px) 400px, 250px"
-          alt={props.title}
-        />
+        <div>
+          {" "}
+          {/* this div helps prevent layout shift by hinting to the browser the dimensions of our image*/}
+          <AlbumCover
+            src={props.cover?.large}
+            srcSet={`${props.cover?.small} 250w, ${props.cover?.medium} 400w, ${props.cover?.large} 679w`}
+            width={"679"}
+            height={"671"}
+            sizes="(min-width: 1200px) 679px, (min-width: 768px) 400px, 250px"
+            alt={props.title}
+          />
+        </div>
         <Details>
           <ProductTitle>{props.title}</ProductTitle>
           <ProductPrice>{`$${props.price}`}</ProductPrice>
           <ProductDescription>{props.description}</ProductDescription>
-          <ButtonGroup>
-            <CTAButton as={"button"}>Add to Cart</CTAButton>
-            <CTAButton
-              as={"a"}
-              href={props.paymentLink}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Buy Now
-            </CTAButton>
-          </ButtonGroup>
+          <CTAButton
+            as={"a"}
+            href={props.paymentLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Buy Now
+          </CTAButton>
         </Details>
       </ProductWrapper>
     </ProductContainer>

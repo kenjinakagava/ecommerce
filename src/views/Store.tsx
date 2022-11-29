@@ -72,8 +72,8 @@ const Store = (props: ProductsAPIResponse) => {
               aria-label={`See details about the album ${data.title}`}
             >
               <StoreAlbumCover
-                src={data.cover?.[2]}
-                srcSet={`${data.cover?.[0]} 250w, ${data.cover?.[1]} 400w`}
+                src={data.cover?.medium}
+                srcSet={`${data.cover?.small} 250w, ${data.cover?.medium} 400w`}
                 sizes="(min-width: 768px) 400px, 250px"
                 alt={`Cover for the album ${data.title}`}
                 height={"400"}

@@ -6,7 +6,6 @@ const HeaderContainer = styled.header`
   ${StylesTopWrapper}
   color: #0a2540;
   position: relative;
-  z-index: 1;
 `;
 // z-index so the box-shadow doesn't get overlapped by the category nav in the store view
 // position: relative so z-index works without taking the element out of the normal flow

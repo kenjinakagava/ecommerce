@@ -61,15 +61,12 @@ const StyledCTAButton = styled.button`
 `;
 
 const CarouselItem = (props: ProductsAPIResponse) => {
-  const smallCover = props.cover?.[0];
-  const mediumCover = props.cover?.[1];
-
   return (
     <ProductWrapper>
       <ProductImageContainer>
         <AlbumCover
-          src={mediumCover}
-          srcSet={`${smallCover} 250w, ${mediumCover} 400w`}
+          src={props.cover?.medium}
+          srcSet={`${props.cover?.small} 250w, ${props.cover?.medium} 400w`}
           sizes="(min-width: 768px) 400px, 250px"
           alt={props.title}
           width={"400"}

@@ -1,12 +1,12 @@
-import CarouselItem from "./CarouselItem";
-import styled from "styled-components";
-import ProductsAPIResponse from "../products/TypesProduct";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Keyboard, A11y } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/a11y";
 import "swiper/css/pagination";
+import styled from "styled-components";
+import CarouselItem from "./CarouselItem";
+import ProductsAPIResponse from "../products/TypesProduct";
 
 const StyledCarousel = styled(Swiper)`
   --swiper-theme-color: #222;
