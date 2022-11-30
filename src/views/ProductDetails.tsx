@@ -33,8 +33,10 @@ const Details = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 50%;
   flex: 1;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 
 const ProductDescription = styled(ProductShortDescription)`

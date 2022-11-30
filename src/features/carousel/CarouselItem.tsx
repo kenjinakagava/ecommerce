@@ -80,9 +80,12 @@ const CarouselItem = (props: ProductsAPIResponse) => {
         </ProductShortDescription>
         <CTAButtonGroup>
           <StyledCTAButton
-            as={"button"}
-            aria-label={`Add the album ${props.title} to the cart`}
-            // aria-label here so the client knows what he's adding to the cart
+            as={"a"}
+            href={props.paymentLink}
+            target={"_blank"}
+            rel="noreferrer"
+            aria-label={`Buy the album ${props.title}`}
+            // aria-label here so the client knows what album he's buying
           >
             Add to Cart
           </StyledCTAButton>
