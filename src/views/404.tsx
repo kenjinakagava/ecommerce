@@ -1,6 +1,7 @@
-import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Container from "../features/ui/styles/Container";
+import styled from "styled-components";
+
+import Container from "../styles/Container.styles";
 
 const Container404 = styled.div`
   ${Container}

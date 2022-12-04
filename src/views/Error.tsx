@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Container from "../features/ui/styles/Container";
+
+import Container from "../styles/Container.styles";
 
 const ErrorContainer = styled.div`
   ${Container}

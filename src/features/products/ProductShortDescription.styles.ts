@@ -7,3 +7,7 @@ const ProductShortDescription = styled.p`
 `;
 
 export default ProductShortDescription;
+
+{
+  // to-do: make a better name for this component, shorter, preferably
+}

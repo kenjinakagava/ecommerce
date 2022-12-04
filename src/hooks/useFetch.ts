@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Generic Typing for reusability
 const useFetch = <T>(url: string) => {

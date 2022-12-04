@@ -1,12 +1,15 @@
-import { Navigation, Keyboard, A11y } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/a11y";
 import "swiper/css/pagination";
+
+import { useContext } from "react";
 import styled from "styled-components";
+import { A11y, Keyboard, Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { ProductsContext } from "../../context/ProductsContext";
 import CarouselItem from "./CarouselItem";
-import ProductsAPIResponse from "../products/TypesProduct";
 
 const StyledCarousel = styled(Swiper)`
   --swiper-theme-color: #222;
@@ -24,7 +27,8 @@ const CarouselSlide = styled(SwiperSlide)`
   justify-content: center;
 `;
 
-const Carousel = (props: ProductsAPIResponse) => {
+const Carousel = () => {
+  const data = useContext(ProductsContext);
   return (
     <StyledCarousel
       modules={[Navigation, Keyboard, A11y]}
@@ -38,7 +42,7 @@ const Carousel = (props: ProductsAPIResponse) => {
         nextSlideMessage: "Next slide",
       }}
     >
-      {props.data?.map((data) =>
+      {data?.map((data) =>
         data.featured ? (
           <CarouselSlide key={data.id}>
             <CarouselItem

@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Container from "./styles/Container";
+
+import Container from "../../styles/Container.styles";
 
 const Wrapper = styled.div`
   ${Container}
