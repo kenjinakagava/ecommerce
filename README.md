@@ -17,8 +17,8 @@ https://user-images.githubusercontent.com/98567681/204696953-2b177afd-dc3b-42f7-
 
 My goal was to get used to working with the React Ecosystem and Typescript.
 
-- I set up multiple routes using react-router 
-- I handled styling using styled-components 
+- I set up dynamic routes using react-router 
+- Used styled-components for its Automatic Critical CSS and easy removal of dead code, resulting in a faster website and better user experience. 
 - I implemented a feature based project folder structure, resulting in a cleaner and more maintainable project
 
 # Why I built this project this way
